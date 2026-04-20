@@ -43,7 +43,11 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
 
         {data.map((op, idx) => {
           const isOpen = openIdx === idx;
-          const oportunidades = isDigital ? op.fit_digital.gap_sem_ict : op.fit_manufatura.gap_sem_ict;
+          const block = isDigital ? op.fit_digital : op.fit_manufatura;
+          const oportunidades = block.gap_sem_ict;
+          const oportunidadesValor = block.subtemas
+            .filter((s) => s.sem_ict > 0)
+            .reduce((acc, s) => acc + (s.valor || 0), 0);
           return (
             <div key={op.operadora} className="border-b border-border last:border-b-0">
               <button
@@ -58,12 +62,15 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
                 <span className="font-semibold text-foreground">{op.operadora}</span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.volume_total)}</span>
                 <span className="text-right tabular-nums text-foreground">{formatNumber(op.projetos_total)}</span>
-                <span className="flex justify-end">
+                <span className="flex flex-col items-end leading-tight">
                   <span
                     className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold tabular-nums"
                     style={{ backgroundColor: "#FCEBEB", color: "#A32D2D" }}
                   >
                     {formatNumber(oportunidades)}
+                  </span>
+                  <span className="mt-0.5 text-[10px] tabular-nums text-muted-foreground">
+                    {formatBRL(oportunidadesValor)}
                   </span>
                 </span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.fit_manufatura.valor_total)}</span>
@@ -187,6 +194,18 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
             ),
           )}{" "}
           projetos
+        </span>
+        <span className="text-muted-foreground">·</span>
+        <span className="text-sm font-semibold tabular-nums text-muted-foreground">
+          {formatBRL(
+            data.reduce((acc, op) => {
+              const b = isDigital ? op.fit_digital : op.fit_manufatura;
+              return (
+                acc +
+                b.subtemas.filter((s) => s.sem_ict > 0).reduce((a, s) => a + (s.valor || 0), 0)
+              );
+            }, 0),
+          )}
         </span>
       </div>
 
