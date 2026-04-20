@@ -18,7 +18,7 @@ const TooltipBar = ({ active, payload }: any) => {
 };
 
 export const ConcorrentesIcts = ({ concorrentes, heatmap }: Props) => {
-  const sorted = [...concorrentes].slice(0, 12).sort((a, b) => a.projetos - b.projetos);
+  const sorted = [...concorrentes].slice(0, 12).sort((a, b) => b.projetos - a.projetos);
 
   // heatmap: find max for normalization
   const max = Math.max(

@@ -25,7 +25,7 @@ const TooltipSub = ({ active, payload }: any) => {
 
 export const FitVertical = ({ subtemas, labs, vertical, labMap }: Props) => {
   const filteredLabs = labs.filter((l) => l.vertical === vertical);
-  const sorted = [...subtemas].sort((a, b) => a.valor - b.valor);
+  const sorted = [...subtemas].sort((a, b) => b.valor - a.valor);
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
