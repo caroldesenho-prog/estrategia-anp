@@ -110,6 +110,18 @@ export interface ParceiroPotencial {
   tipo: string;
   subtemas: string[];
 }
+export interface ProjetoAnp {
+  id: string;
+  titulo: string;
+  objetivo: string;
+  valor: number;
+  prazo_meses: number;
+  qualificacao: string;
+  instituicao: string;
+  empresa_br: string;
+  tem_ict: boolean;
+  ano: number;
+}
 export interface OperadoraFit {
   operadora: string;
   volume_total: number;
@@ -119,6 +131,7 @@ export interface OperadoraFit {
   fit_manufatura: FitVerticalBlock;
   fit_digital: FitVerticalBlock;
   parceiros_potenciais: ParceiroPotencial[];
+  projetos_por_subtema?: Record<string, ProjetoAnp[]>;
 }
 
 export interface PeriodData {
