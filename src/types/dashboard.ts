@@ -1,47 +1,110 @@
-export type Vertical = "Manufatura Avançada" | "Tecnologias Digitais";
 export type Period = "3anos" | "5anos";
+export type Vertical =
+  | "Manufatura Avançada"
+  | "Tecnologias Digitais Avançadas"
+  | "Energias Renováveis"
+  | "Materiais Avançados"
+  | "Biotecnologia";
+export type View = "geral" | "vertical";
 
-export interface Resumo {
+export interface ResumoGeral {
   total_projetos: number;
   total_valor: number;
-  projetos_fit_ma: number;
-  valor_fit_ma: number;
-  gap_sem_ict: number;
-  valor_gap: number;
+  pct_com_ict: number;
+  pct_sem_ict: number;
 }
 
 export interface OperadoraRow { operadora: string; total: number; projetos: number; }
+export interface TaxaIctRow {
+  operadora: string;
+  total: number;
+  com_ict: number;
+  com_eb: number;
+  sem_nenhum: number;
+  pct_ict: number;
+}
+export interface IctPorOperadora {
+  operadora: string;
+  volume: number;
+  ict1: string;
+  ict2: string;
+  ict3: string;
+}
 export interface ParceiroRow { empresa: string; projetos: number; valor: number; operadoras: string[]; }
 export interface ConcorrenteRow { ict: string; projetos: number; valor: number; num_operadoras: number; }
 export interface HeatmapData { icts: string[]; operadoras: string[]; dados: Array<Record<string, string | number>>; }
-export interface LabRow { lab: string; vertical: string; projetos: number; valor: number; subtemas_cobertos: number; subtemas?: string[]; }
-export interface SubtemaFitRow { subtema: string; projetos: number; valor: number; sem_ict: number; }
-export interface SubtemaTree { subtema: string; projetos: number; valor: number; fit: boolean; sem_ict: number; }
-export interface TemaTree { tema: string; projetos: number; valor: number; subtemas: SubtemaTree[]; fit_valor: number; fit_count: number; }
-export interface GapOperadora { operadora: string; proj_gap: number; valor_gap: number; proj_total: number; pct_gap: number; }
 export interface ObrigacaoExecucao { operadora: string; obrigacao: number; executado: number; gap: number; }
+
+export interface SubtemaTree { subtema: string; projetos: number; valor: number; sem_ict: number; }
+export interface TemaTree {
+  tema: string;
+  projetos: number;
+  valor: number;
+  subtemas: SubtemaTree[];
+  fit_count?: number;
+  fit_valor?: number;
+}
+
+export interface ResumoVertical {
+  projetos_fit: number;
+  valor_fit: number;
+  gap_projetos: number;
+  gap_valor: number;
+  pct_fit: number;
+}
+export interface SubtemaFit { subtema: string; projetos: number; valor: number; sem_ict: number; }
+export interface LabRow { lab: string; projetos: number; valor: number; subtemas: string[]; sem_ict?: number; }
+export interface GapVerticalRow {
+  operadora: string;
+  proj_gap: number;
+  valor_gap: number;
+  proj_total: number;
+  pct_gap: number;
+}
+export interface CrescimentoSubtema {
+  subtema: string;
+  valor_atual: number;
+  valor_anterior: number;
+  projetos: number;
+  crescimento: number;
+}
+export interface TemaComFit {
+  tema: string;
+  projetos: number;
+  valor: number;
+  subtemas: SubtemaTree[];
+  fit_count: number;
+  fit_valor: number;
+}
+
+export interface VerticalData {
+  cor: string;
+  resumo: ResumoVertical;
+  top10_subtemas: SubtemaFit[];
+  fit_por_lab: LabRow[];
+  gap_por_operadora: GapVerticalRow[];
+  crescimento_subtemas: CrescimentoSubtema[];
+  temas_com_fit: TemaComFit[];
+}
 
 export interface PeriodData {
   periodo: string;
-  resumo: Resumo;
+  resumo_geral: ResumoGeral;
   top15_operadoras: OperadoraRow[];
+  taxa_ict_operadora: TaxaIctRow[];
+  ict_por_operadora: IctPorOperadora[];
   parceiros: ParceiroRow[];
   concorrentes: ConcorrenteRow[];
   heatmap_ict_op: HeatmapData;
-  fit_por_lab: LabRow[];
-  top10_subtemas_fit: SubtemaFitRow[];
-  temas_tree: TemaTree[];
-  crescimento_subtemas: Array<{ subtema: string; valor_atual: number; valor_anterior: number; projetos: number; crescimento: number }>;
-  gap_por_operadora: GapOperadora[];
   obrigacao_vs_execucao: ObrigacaoExecucao[];
+  temas_tree: TemaTree[];
+  por_vertical: Record<Vertical, VerticalData>;
 }
+
+export interface VerticalMeta { cor: string; labs: string[]; }
 
 export interface DashboardData {
   "3anos": PeriodData;
   "5anos": PeriodData;
-  competencias: {
-    verticais: Record<string, string[]>;
-    lab_map: Record<string, string[]>;
-    fit_subtemas: string[];
-  };
+  verticais_meta: Record<Vertical, VerticalMeta>;
 }
