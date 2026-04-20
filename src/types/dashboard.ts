@@ -154,5 +154,6 @@ export interface VerticalMeta { cor: string; labs: string[]; }
 export interface DashboardData {
   "3anos": PeriodData;
   "5anos": PeriodData;
+  "8anos": PeriodData;
   verticais_meta: Record<Vertical, VerticalMeta>;
 }
