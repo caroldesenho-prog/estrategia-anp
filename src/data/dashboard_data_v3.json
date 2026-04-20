@@ -628,76 +628,459 @@
     },
     "obrigacao_vs_execucao": [
       {
-        "operadora": "Petrobras",
-        "obrigacao": 8252471097.0,
-        "executado": 23572508089.88,
-        "gap": -15320036992.880001
+        "operadora": "PETROBRAS",
+        "obrigacao_total": 8252471097.0,
+        "executado_total": 23572508089.88,
+        "gap": -15320036992.880001,
+        "saldo_pct": 285.6,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 2616637233.8199997
+          },
+          {
+            "ano": 2024,
+            "valor": 2774745043.07
+          },
+          {
+            "ano": 2025,
+            "valor": 2861088820.11
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 4762343538.46
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95
+          }
+        ]
       },
       {
-        "operadora": "Shell",
-        "obrigacao": 1616895914.99,
-        "executado": 1428351437.22,
-        "gap": 188544477.76999998
+        "operadora": "SHELL",
+        "obrigacao_total": 1616895914.99,
+        "executado_total": 1428351437.22,
+        "gap": 188544477.76999998,
+        "saldo_pct": 88.3,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 513555392.65
+          },
+          {
+            "ano": 2024,
+            "valor": 555389143.05
+          },
+          {
+            "ano": 2025,
+            "valor": 547951379.29
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 473035095.25
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06
+          }
+        ]
       },
       {
-        "operadora": "Total Energies",
-        "obrigacao": 648034467.91,
-        "executado": 750538451.62,
-        "gap": -102503983.71000004
+        "operadora": "TOTAL",
+        "obrigacao_total": 648034467.91,
+        "executado_total": 750538451.62,
+        "gap": -102503983.71000004,
+        "saldo_pct": 115.8,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 173110539.11
+          },
+          {
+            "ano": 2024,
+            "valor": 223467666.64
+          },
+          {
+            "ano": 2025,
+            "valor": 251456262.16
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 193699806.47
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0
+          }
+        ]
       },
       {
-        "operadora": "Petrogal",
-        "obrigacao": 412160836.7,
-        "executado": 513005880.51,
-        "gap": -100845043.81
+        "operadora": "PETROGAL",
+        "obrigacao_total": 412160836.7,
+        "executado_total": 513005880.51,
+        "gap": -100845043.81,
+        "saldo_pct": 124.5,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 141244772.57
+          },
+          {
+            "ano": 2024,
+            "valor": 143130260.0
+          },
+          {
+            "ano": 2025,
+            "valor": 127785804.13000001
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 175993896.87
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79
+          }
+        ]
       },
       {
-        "operadora": "CNOOC Petroleum",
-        "obrigacao": 356213266.48,
-        "executado": 139290061.85,
-        "gap": 216923204.63000003
+        "operadora": "CNOOC",
+        "obrigacao_total": 356213266.48,
+        "executado_total": 139290061.85,
+        "gap": 216923204.63000003,
+        "saldo_pct": 39.1,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 92449772.06
+          },
+          {
+            "ano": 2024,
+            "valor": 117240176.88
+          },
+          {
+            "ano": 2025,
+            "valor": 146523317.54000002
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 32007717.87
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64
+          }
+        ]
       },
       {
-        "operadora": "CNPC Brasil",
-        "obrigacao": 250122739.44,
-        "executado": 140120602.87,
-        "gap": 110002136.57
+        "operadora": "CNODC",
+        "obrigacao_total": 250122739.44,
+        "executado_total": 140120602.87,
+        "gap": 110002136.57,
+        "saldo_pct": 56.0,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 60207863.18
+          },
+          {
+            "ano": 2024,
+            "valor": 81207881.93
+          },
+          {
+            "ano": 2025,
+            "valor": 108706994.33
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 42143800.32
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       },
       {
-        "operadora": "PetroRio",
-        "obrigacao": 212690828.43,
-        "executado": 69445155.07,
-        "gap": 143245673.36
+        "operadora": "PRIO FORTE",
+        "obrigacao_total": 212690828.43,
+        "executado_total": 69445155.07,
+        "gap": 143245673.36,
+        "saldo_pct": 32.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 54729818.42
+          },
+          {
+            "ano": 2024,
+            "valor": 87784463.72
+          },
+          {
+            "ano": 2025,
+            "valor": 70176546.28999999
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 44105524.160000004
+          }
+        ]
       },
       {
-        "operadora": "Repsol Sinopec",
-        "obrigacao": 202505112.09,
-        "executado": 243042383.64000002,
-        "gap": -40537271.55000001
+        "operadora": "REPSOL",
+        "obrigacao_total": 202505112.09,
+        "executado_total": 243042383.64000002,
+        "gap": -40537271.55000001,
+        "saldo_pct": 120.0,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 78456436.69
+          },
+          {
+            "ano": 2024,
+            "valor": 68776467.36
+          },
+          {
+            "ano": 2025,
+            "valor": 55272208.04
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5
+          }
+        ]
       },
       {
-        "operadora": "Petronas",
-        "obrigacao": 179435431.99,
-        "executado": 258882242.45,
-        "gap": -79446810.45999998
+        "operadora": "PETRONAS",
+        "obrigacao_total": 179435431.99,
+        "executado_total": 258882242.45,
+        "gap": -79446810.45999998,
+        "saldo_pct": 144.3,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 64505233.78
+          },
+          {
+            "ano": 2024,
+            "valor": 65102430.29
+          },
+          {
+            "ano": 2025,
+            "valor": 49827767.92
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 185797378.33
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12
+          }
+        ]
       },
       {
-        "operadora": "Equinor",
-        "obrigacao": 157980640.47,
-        "executado": 143945595.34,
-        "gap": 14035045.129999995
+        "operadora": "EQUINOR ENERGY",
+        "obrigacao_total": 157980640.47,
+        "executado_total": 143945595.34,
+        "gap": 14035045.129999995,
+        "saldo_pct": 91.1,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 42236124.66
+          },
+          {
+            "ano": 2024,
+            "valor": 55356571.64
+          },
+          {
+            "ano": 2025,
+            "valor": 60387944.17
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 109559512.74
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02
+          }
+        ]
       },
       {
-        "operadora": "Qatar Energy",
-        "obrigacao": 82612848.57,
-        "executado": 0.0,
-        "gap": 82612848.57
+        "operadora": "QATAR ENERGY",
+        "obrigacao_total": 82612848.57,
+        "executado_total": 107887479.26,
+        "gap": -25274630.690000013,
+        "saldo_pct": 130.6,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 28505149.44
+          },
+          {
+            "ano": 2024,
+            "valor": 28651750.36
+          },
+          {
+            "ano": 2025,
+            "valor": 25455948.77
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 10108446.49
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44
+          }
+        ]
       },
       {
-        "operadora": "Karoon Brasil",
-        "obrigacao": 72086869.06,
-        "executado": 73105015.73,
-        "gap": -1018146.6700000018
+        "operadora": "KAROON",
+        "obrigacao_total": 72086869.06,
+        "executado_total": 73105015.73,
+        "gap": -1018146.6700000018,
+        "saldo_pct": 101.4,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 29730245.44
+          },
+          {
+            "ano": 2024,
+            "valor": 26078352.72
+          },
+          {
+            "ano": 2025,
+            "valor": 16278270.9
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 8123764.45
+          },
+          {
+            "ano": 2024,
+            "valor": 31134622.82
+          },
+          {
+            "ano": 2025,
+            "valor": 33846628.46
+          }
+        ]
+      },
+      {
+        "operadora": "ENEVA",
+        "obrigacao_total": 15467038.239999998,
+        "executado_total": 4300841.61,
+        "gap": 11166196.629999999,
+        "saldo_pct": 27.8,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 15467038.239999998
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 4300841.61
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       }
     ],
     "temas_tree": [
@@ -11948,76 +12331,667 @@
     },
     "obrigacao_vs_execucao": [
       {
-        "operadora": "Petrobras",
-        "obrigacao": 13639470808.85,
-        "executado": 27800632622.2,
-        "gap": -14161161813.35
+        "operadora": "PETROBRAS",
+        "obrigacao_total": 13639470808.85,
+        "executado_total": 27800632622.2,
+        "gap": -14161161813.35,
+        "saldo_pct": 203.8,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 2256709790.88
+          },
+          {
+            "ano": 2022,
+            "valor": 3130289920.9700003
+          },
+          {
+            "ano": 2023,
+            "valor": 2616637233.8199997
+          },
+          {
+            "ano": 2024,
+            "valor": 2774745043.07
+          },
+          {
+            "ano": 2025,
+            "valor": 2861088820.11
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 1626745783.56
+          },
+          {
+            "ano": 2022,
+            "valor": 2601378748.76
+          },
+          {
+            "ano": 2023,
+            "valor": 4762343538.46
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95
+          }
+        ]
       },
       {
-        "operadora": "Shell",
-        "obrigacao": 2648184807.62,
-        "executado": 2911131422.23,
-        "gap": -262946614.61000013
+        "operadora": "SHELL",
+        "obrigacao_total": 2648184807.62,
+        "executado_total": 2911131422.23,
+        "gap": -262946614.61000013,
+        "saldo_pct": 109.9,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 419097156.49
+          },
+          {
+            "ano": 2022,
+            "valor": 612191736.14
+          },
+          {
+            "ano": 2023,
+            "valor": 513555392.65
+          },
+          {
+            "ano": 2024,
+            "valor": 555389143.05
+          },
+          {
+            "ano": 2025,
+            "valor": 547951379.29
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 235165840.75
+          },
+          {
+            "ano": 2022,
+            "valor": 1247614144.26
+          },
+          {
+            "ano": 2023,
+            "valor": 473035095.25
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06
+          }
+        ]
       },
       {
-        "operadora": "Total Energies",
-        "obrigacao": 813442624.17,
-        "executado": 958091439.38,
-        "gap": -144648815.21000004
+        "operadora": "TOTAL",
+        "obrigacao_total": 813442624.17,
+        "executado_total": 958091439.38,
+        "gap": -144648815.21000004,
+        "saldo_pct": 117.8,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 20620556.07
+          },
+          {
+            "ano": 2022,
+            "valor": 144787600.19
+          },
+          {
+            "ano": 2023,
+            "valor": 173110539.11
+          },
+          {
+            "ano": 2024,
+            "valor": 223467666.64
+          },
+          {
+            "ano": 2025,
+            "valor": 251456262.16
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 139068711.58
+          },
+          {
+            "ano": 2022,
+            "valor": 68484276.18
+          },
+          {
+            "ano": 2023,
+            "valor": 193699806.47
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0
+          }
+        ]
       },
       {
-        "operadora": "Petrogal",
-        "obrigacao": 716758314.6800001,
-        "executado": 691723588.06,
-        "gap": 25034726.620000124
+        "operadora": "PETROGAL",
+        "obrigacao_total": 716758314.6800001,
+        "executado_total": 691723588.06,
+        "gap": 25034726.620000124,
+        "saldo_pct": 96.5,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 128439477.43
+          },
+          {
+            "ano": 2022,
+            "valor": 176158000.55
+          },
+          {
+            "ano": 2023,
+            "valor": 141244772.57
+          },
+          {
+            "ano": 2024,
+            "valor": 143130260.0
+          },
+          {
+            "ano": 2025,
+            "valor": 127785804.13000001
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 92059501.15
+          },
+          {
+            "ano": 2022,
+            "valor": 86658206.4
+          },
+          {
+            "ano": 2023,
+            "valor": 175993896.87
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79
+          }
+        ]
       },
       {
-        "operadora": "CNOOC Petroleum",
-        "obrigacao": 423652617.03,
-        "executado": 143548616.85,
-        "gap": 280104000.17999995
+        "operadora": "CNOOC",
+        "obrigacao_total": 423652617.03,
+        "executado_total": 143548616.85,
+        "gap": 280104000.17999995,
+        "saldo_pct": 33.9,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 12643601.979999999
+          },
+          {
+            "ano": 2022,
+            "valor": 54795748.56999999
+          },
+          {
+            "ano": 2023,
+            "valor": 92449772.06
+          },
+          {
+            "ano": 2024,
+            "valor": 117240176.88
+          },
+          {
+            "ano": 2025,
+            "valor": 146523317.54000002
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 4258555.0
+          },
+          {
+            "ano": 2023,
+            "valor": 32007717.87
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64
+          }
+        ]
       },
       {
-        "operadora": "Repsol Sinopec",
-        "obrigacao": 387707590.46000004,
-        "executado": 445773909.73,
-        "gap": -58066319.26999998
+        "operadora": "REPSOL",
+        "obrigacao_total": 387707590.46000004,
+        "executado_total": 445773909.73,
+        "gap": -58066319.26999998,
+        "saldo_pct": 115.0,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 77917256.39
+          },
+          {
+            "ano": 2022,
+            "valor": 107285221.98
+          },
+          {
+            "ano": 2023,
+            "valor": 78456436.69
+          },
+          {
+            "ano": 2024,
+            "valor": 68776467.36
+          },
+          {
+            "ano": 2025,
+            "valor": 55272208.04
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 44281745.54
+          },
+          {
+            "ano": 2022,
+            "valor": 158449780.55
+          },
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5
+          }
+        ]
       },
       {
-        "operadora": "CNPC Brasil",
-        "obrigacao": 314813496.64,
-        "executado": 156484027.65,
-        "gap": 158329468.98999998
+        "operadora": "CNODC",
+        "obrigacao_total": 314813496.64,
+        "executado_total": 156484027.65,
+        "gap": 158329468.98999998,
+        "saldo_pct": 49.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 12643601.979999999
+          },
+          {
+            "ano": 2022,
+            "valor": 52047155.22
+          },
+          {
+            "ano": 2023,
+            "valor": 60207863.18
+          },
+          {
+            "ano": 2024,
+            "valor": 81207881.93
+          },
+          {
+            "ano": 2025,
+            "valor": 108706994.33
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 16363424.780000001
+          },
+          {
+            "ano": 2023,
+            "valor": 42143800.32
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       },
       {
-        "operadora": "Petronas",
-        "obrigacao": 307939254.87,
-        "executado": 355259146.77,
-        "gap": -47319891.899999976
+        "operadora": "PETRONAS",
+        "obrigacao_total": 307939254.87,
+        "executado_total": 355259146.77,
+        "gap": -47319891.899999976,
+        "saldo_pct": 115.4,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 52810269.08
+          },
+          {
+            "ano": 2022,
+            "valor": 75693553.8
+          },
+          {
+            "ano": 2023,
+            "valor": 64505233.78
+          },
+          {
+            "ano": 2024,
+            "valor": 65102430.29
+          },
+          {
+            "ano": 2025,
+            "valor": 49827767.92
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 54612012.69
+          },
+          {
+            "ano": 2022,
+            "valor": 41764891.63
+          },
+          {
+            "ano": 2023,
+            "valor": 185797378.33
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12
+          }
+        ]
       },
       {
-        "operadora": "Equinor",
-        "obrigacao": 255170426.48,
-        "executado": 265335534.68,
-        "gap": -10165108.200000018
+        "operadora": "EQUINOR ENERGY",
+        "obrigacao_total": 255170426.48,
+        "executado_total": 265335534.68,
+        "gap": -10165108.200000018,
+        "saldo_pct": 104.0,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 44129532.07
+          },
+          {
+            "ano": 2022,
+            "valor": 53060253.94
+          },
+          {
+            "ano": 2023,
+            "valor": 42236124.66
+          },
+          {
+            "ano": 2024,
+            "valor": 55356571.64
+          },
+          {
+            "ano": 2025,
+            "valor": 60387944.17
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 31142361.4
+          },
+          {
+            "ano": 2022,
+            "valor": 90247577.94
+          },
+          {
+            "ano": 2023,
+            "valor": 109559512.74
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02
+          }
+        ]
       },
       {
-        "operadora": "PetroRio",
-        "obrigacao": 213298143.77,
-        "executado": 69445155.07,
-        "gap": 143852988.70000002
+        "operadora": "PRIO FORTE",
+        "obrigacao_total": 213298143.77,
+        "executado_total": 69445155.07,
+        "gap": 143852988.70000002,
+        "saldo_pct": 32.6,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 607315.34
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 54729818.42
+          },
+          {
+            "ano": 2024,
+            "valor": 87784463.72
+          },
+          {
+            "ano": 2025,
+            "valor": 70176546.28999999
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 44105524.160000004
+          }
+        ]
       },
       {
-        "operadora": "Qatar Energy",
-        "obrigacao": 99448640.44,
-        "executado": 0.0,
-        "gap": 99448640.44
+        "operadora": "QATAR ENERGY",
+        "obrigacao_total": 99448640.44,
+        "executado_total": 107887479.26,
+        "gap": -8438838.820000008,
+        "saldo_pct": 108.5,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 16835791.87
+          },
+          {
+            "ano": 2023,
+            "valor": 28505149.44
+          },
+          {
+            "ano": 2024,
+            "valor": 28651750.36
+          },
+          {
+            "ano": 2025,
+            "valor": 25455948.77
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 10108446.49
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44
+          }
+        ]
       },
       {
-        "operadora": "Karoon Brasil",
-        "obrigacao": 81215914.82,
-        "executado": 74501161.97,
-        "gap": 6714752.849999994
+        "operadora": "KAROON",
+        "obrigacao_total": 81215914.82,
+        "executado_total": 74501161.97,
+        "gap": 6714752.849999994,
+        "saldo_pct": 91.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 9129045.76
+          },
+          {
+            "ano": 2023,
+            "valor": 29730245.44
+          },
+          {
+            "ano": 2024,
+            "valor": 26078352.72
+          },
+          {
+            "ano": 2025,
+            "valor": 16278270.9
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 1396146.24
+          },
+          {
+            "ano": 2023,
+            "valor": 8123764.45
+          },
+          {
+            "ano": 2024,
+            "valor": 31134622.82
+          },
+          {
+            "ano": 2025,
+            "valor": 33846628.46
+          }
+        ]
+      },
+      {
+        "operadora": "ENEVA",
+        "obrigacao_total": 20166642.619999997,
+        "executado_total": 5931584.350000001,
+        "gap": 14235058.269999996,
+        "saldo_pct": 29.4,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 4699604.38
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 15467038.239999998
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 1630742.74
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 4300841.61
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       }
     ],
     "temas_tree": [
@@ -23610,76 +24584,979 @@
     },
     "obrigacao_vs_execucao": [
       {
-        "operadora": "Petrobras",
-        "obrigacao": 17670063438.93,
-        "executado": 33068802096.91,
-        "gap": -15398738657.98
+        "operadora": "PETROBRAS",
+        "obrigacao_total": 17670063438.93,
+        "executado_total": 33068802096.91,
+        "gap": -15398738657.98,
+        "saldo_pct": 187.1,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 1528420652.07
+          },
+          {
+            "ano": 2019,
+            "valor": 1423375719.3400002
+          },
+          {
+            "ano": 2020,
+            "valor": 1078796258.67
+          },
+          {
+            "ano": 2021,
+            "valor": 2256709790.88
+          },
+          {
+            "ano": 2022,
+            "valor": 3130289920.9700003
+          },
+          {
+            "ano": 2023,
+            "valor": 2616637233.8199997
+          },
+          {
+            "ano": 2024,
+            "valor": 2774745043.07
+          },
+          {
+            "ano": 2025,
+            "valor": 2861088820.11
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 1507433228.8
+          },
+          {
+            "ano": 2019,
+            "valor": 2491402680.42
+          },
+          {
+            "ano": 2020,
+            "valor": 1269333565.49
+          },
+          {
+            "ano": 2021,
+            "valor": 1626745783.56
+          },
+          {
+            "ano": 2022,
+            "valor": 2601378748.76
+          },
+          {
+            "ano": 2023,
+            "valor": 4762343538.46
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95
+          }
+        ]
       },
       {
-        "operadora": "Shell",
-        "obrigacao": 3447211784.15,
-        "executado": 3793395158.84,
-        "gap": -346183374.69000006
+        "operadora": "SHELL",
+        "obrigacao_total": 3447211784.15,
+        "executado_total": 3793395158.84,
+        "gap": -346183374.69000006,
+        "saldo_pct": 110.0,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 277275952.73
+          },
+          {
+            "ano": 2019,
+            "valor": 284330927.86
+          },
+          {
+            "ano": 2020,
+            "valor": 237420095.94
+          },
+          {
+            "ano": 2021,
+            "valor": 419097156.49
+          },
+          {
+            "ano": 2022,
+            "valor": 612191736.14
+          },
+          {
+            "ano": 2023,
+            "valor": 513555392.65
+          },
+          {
+            "ano": 2024,
+            "valor": 555389143.05
+          },
+          {
+            "ano": 2025,
+            "valor": 547951379.29
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 433904065.21
+          },
+          {
+            "ano": 2019,
+            "valor": 416078088.2
+          },
+          {
+            "ano": 2020,
+            "valor": 32281583.200000003
+          },
+          {
+            "ano": 2021,
+            "valor": 235165840.75
+          },
+          {
+            "ano": 2022,
+            "valor": 1247614144.26
+          },
+          {
+            "ano": 2023,
+            "valor": 473035095.25
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06
+          }
+        ]
       },
       {
-        "operadora": "Petrogal",
-        "obrigacao": 960320914.23,
-        "executado": 967682394.09,
-        "gap": -7361479.860000014
+        "operadora": "PETROGAL",
+        "obrigacao_total": 960320914.23,
+        "executado_total": 967682394.09,
+        "gap": -7361479.860000014,
+        "saldo_pct": 100.8,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 81873846.93
+          },
+          {
+            "ano": 2019,
+            "valor": 86695494.92
+          },
+          {
+            "ano": 2020,
+            "valor": 74993257.7
+          },
+          {
+            "ano": 2021,
+            "valor": 128439477.43
+          },
+          {
+            "ano": 2022,
+            "valor": 176158000.55
+          },
+          {
+            "ano": 2023,
+            "valor": 141244772.57
+          },
+          {
+            "ano": 2024,
+            "valor": 143130260.0
+          },
+          {
+            "ano": 2025,
+            "valor": 127785804.13000001
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 72406174.99
+          },
+          {
+            "ano": 2019,
+            "valor": 91001765.4
+          },
+          {
+            "ano": 2020,
+            "valor": 112550865.64
+          },
+          {
+            "ano": 2021,
+            "valor": 92059501.15
+          },
+          {
+            "ano": 2022,
+            "valor": 86658206.4
+          },
+          {
+            "ano": 2023,
+            "valor": 175993896.87
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79
+          }
+        ]
       },
       {
-        "operadora": "Total Energies",
-        "obrigacao": 828138862.5699999,
-        "executado": 1040862550.16,
-        "gap": -212723687.59000003
+        "operadora": "TOTAL",
+        "obrigacao_total": 828138862.5699999,
+        "executado_total": 1040862550.16,
+        "gap": -212723687.59000003,
+        "saldo_pct": 125.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 4761810.99
+          },
+          {
+            "ano": 2019,
+            "valor": 6271545.39
+          },
+          {
+            "ano": 2020,
+            "valor": 3662882.02
+          },
+          {
+            "ano": 2021,
+            "valor": 20620556.07
+          },
+          {
+            "ano": 2022,
+            "valor": 144787600.19
+          },
+          {
+            "ano": 2023,
+            "valor": 173110539.11
+          },
+          {
+            "ano": 2024,
+            "valor": 223467666.64
+          },
+          {
+            "ano": 2025,
+            "valor": 251456262.16
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 19759827.45
+          },
+          {
+            "ano": 2020,
+            "valor": 63011283.33
+          },
+          {
+            "ano": 2021,
+            "valor": 139068711.58
+          },
+          {
+            "ano": 2022,
+            "valor": 68484276.18
+          },
+          {
+            "ano": 2023,
+            "valor": 193699806.47
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0
+          }
+        ]
       },
       {
-        "operadora": "Repsol Sinopec",
-        "obrigacao": 536704650.32,
-        "executado": 653001567.51,
-        "gap": -116296917.19
+        "operadora": "REPSOL",
+        "obrigacao_total": 536704650.32,
+        "executado_total": 653001567.51,
+        "gap": -116296917.19,
+        "saldo_pct": 121.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 59334797.58
+          },
+          {
+            "ano": 2019,
+            "valor": 51100537.58
+          },
+          {
+            "ano": 2020,
+            "valor": 38561724.7
+          },
+          {
+            "ano": 2021,
+            "valor": 77917256.39
+          },
+          {
+            "ano": 2022,
+            "valor": 107285221.98
+          },
+          {
+            "ano": 2023,
+            "valor": 78456436.69
+          },
+          {
+            "ano": 2024,
+            "valor": 68776467.36
+          },
+          {
+            "ano": 2025,
+            "valor": 55272208.04
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 65140498.47
+          },
+          {
+            "ano": 2019,
+            "valor": 133179709.06
+          },
+          {
+            "ano": 2020,
+            "valor": 8907450.25
+          },
+          {
+            "ano": 2021,
+            "valor": 44281745.54
+          },
+          {
+            "ano": 2022,
+            "valor": 158449780.55
+          },
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5
+          }
+        ]
       },
       {
-        "operadora": "CNOOC Petroleum",
-        "obrigacao": 431000736.19,
-        "executado": 143548616.85,
-        "gap": 287452119.34000003
+        "operadora": "CNOOC",
+        "obrigacao_total": 431000736.19,
+        "executado_total": 143548616.85,
+        "gap": 287452119.34000003,
+        "saldo_pct": 33.3,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 2380905.48
+          },
+          {
+            "ano": 2019,
+            "valor": 3135772.68
+          },
+          {
+            "ano": 2020,
+            "valor": 1831441.0
+          },
+          {
+            "ano": 2021,
+            "valor": 12643601.979999999
+          },
+          {
+            "ano": 2022,
+            "valor": 54795748.56999999
+          },
+          {
+            "ano": 2023,
+            "valor": 92449772.06
+          },
+          {
+            "ano": 2024,
+            "valor": 117240176.88
+          },
+          {
+            "ano": 2025,
+            "valor": 146523317.54000002
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 4258555.0
+          },
+          {
+            "ano": 2023,
+            "valor": 32007717.87
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64
+          }
+        ]
       },
       {
-        "operadora": "Equinor",
-        "obrigacao": 368236833.65,
-        "executado": 294289632.09,
-        "gap": 73947201.56
+        "operadora": "EQUINOR ENERGY",
+        "obrigacao_total": 368236833.65,
+        "executado_total": 294289632.09,
+        "gap": 73947201.56,
+        "saldo_pct": 79.9,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 53695597.57
+          },
+          {
+            "ano": 2019,
+            "valor": 52849982.65
+          },
+          {
+            "ano": 2020,
+            "valor": 6520826.95
+          },
+          {
+            "ano": 2021,
+            "valor": 44129532.07
+          },
+          {
+            "ano": 2022,
+            "valor": 53060253.94
+          },
+          {
+            "ano": 2023,
+            "valor": 42236124.66
+          },
+          {
+            "ano": 2024,
+            "valor": 55356571.64
+          },
+          {
+            "ano": 2025,
+            "valor": 60387944.17
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 28954097.41
+          },
+          {
+            "ano": 2021,
+            "valor": 31142361.4
+          },
+          {
+            "ano": 2022,
+            "valor": 90247577.94
+          },
+          {
+            "ano": 2023,
+            "valor": 109559512.74
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02
+          }
+        ]
       },
       {
-        "operadora": "Petronas",
-        "obrigacao": 340704155.98,
-        "executado": 355259146.77,
-        "gap": -14554990.789999962
+        "operadora": "PETRONAS",
+        "obrigacao_total": 340704155.98,
+        "executado_total": 355259146.77,
+        "gap": -14554990.789999962,
+        "saldo_pct": 104.3,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 528706.15
+          },
+          {
+            "ano": 2020,
+            "valor": 32236194.96
+          },
+          {
+            "ano": 2021,
+            "valor": 52810269.08
+          },
+          {
+            "ano": 2022,
+            "valor": 75693553.8
+          },
+          {
+            "ano": 2023,
+            "valor": 64505233.78
+          },
+          {
+            "ano": 2024,
+            "valor": 65102430.29
+          },
+          {
+            "ano": 2025,
+            "valor": 49827767.92
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 54612012.69
+          },
+          {
+            "ano": 2022,
+            "valor": 41764891.63
+          },
+          {
+            "ano": 2023,
+            "valor": 185797378.33
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12
+          }
+        ]
       },
       {
-        "operadora": "CNPC Brasil",
-        "obrigacao": 322161615.8,
-        "executado": 156484027.65,
-        "gap": 165677588.15
+        "operadora": "CNODC",
+        "obrigacao_total": 322161615.8,
+        "executado_total": 156484027.65,
+        "gap": 165677588.15,
+        "saldo_pct": 48.6,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 2380905.48
+          },
+          {
+            "ano": 2019,
+            "valor": 3135772.68
+          },
+          {
+            "ano": 2020,
+            "valor": 1831441.0
+          },
+          {
+            "ano": 2021,
+            "valor": 12643601.979999999
+          },
+          {
+            "ano": 2022,
+            "valor": 52047155.22
+          },
+          {
+            "ano": 2023,
+            "valor": 60207863.18
+          },
+          {
+            "ano": 2024,
+            "valor": 81207881.93
+          },
+          {
+            "ano": 2025,
+            "valor": 108706994.33
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 16363424.780000001
+          },
+          {
+            "ano": 2023,
+            "valor": 42143800.32
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       },
       {
-        "operadora": "PetroRio",
-        "obrigacao": 252299025.24,
-        "executado": 69445155.07,
-        "gap": 182853870.17000002
+        "operadora": "PRIO FORTE",
+        "obrigacao_total": 252299025.24,
+        "executado_total": 69445155.07,
+        "gap": 182853870.17000002,
+        "saldo_pct": 27.5,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 20767591.61
+          },
+          {
+            "ano": 2019,
+            "valor": 18005197.86
+          },
+          {
+            "ano": 2020,
+            "valor": 228092.0
+          },
+          {
+            "ano": 2021,
+            "valor": 607315.34
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 54729818.42
+          },
+          {
+            "ano": 2024,
+            "valor": 87784463.72
+          },
+          {
+            "ano": 2025,
+            "valor": 70176546.28999999
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 44105524.160000004
+          }
+        ]
       },
       {
-        "operadora": "Qatar Energy",
-        "obrigacao": 99448640.44,
-        "executado": 0.0,
-        "gap": 99448640.44
+        "operadora": "QATAR ENERGY",
+        "obrigacao_total": 99448640.44,
+        "executado_total": 107887479.26,
+        "gap": -8438838.820000008,
+        "saldo_pct": 108.5,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 16835791.87
+          },
+          {
+            "ano": 2023,
+            "valor": 28505149.44
+          },
+          {
+            "ano": 2024,
+            "valor": 28651750.36
+          },
+          {
+            "ano": 2025,
+            "valor": 25455948.77
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 10108446.49
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44
+          }
+        ]
       },
       {
-        "operadora": "Karoon Brasil",
-        "obrigacao": 81215914.82,
-        "executado": 74501161.97,
-        "gap": 6714752.849999994
+        "operadora": "KAROON",
+        "obrigacao_total": 81215914.82,
+        "executado_total": 74501161.97,
+        "gap": 6714752.849999994,
+        "saldo_pct": 91.7,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 9129045.76
+          },
+          {
+            "ano": 2023,
+            "valor": 29730245.44
+          },
+          {
+            "ano": 2024,
+            "valor": 26078352.72
+          },
+          {
+            "ano": 2025,
+            "valor": 16278270.9
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 0
+          },
+          {
+            "ano": 2019,
+            "valor": 0
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 0
+          },
+          {
+            "ano": 2022,
+            "valor": 1396146.24
+          },
+          {
+            "ano": 2023,
+            "valor": 8123764.45
+          },
+          {
+            "ano": 2024,
+            "valor": 31134622.82
+          },
+          {
+            "ano": 2025,
+            "valor": 33846628.46
+          }
+        ]
+      },
+      {
+        "operadora": "ENEVA",
+        "obrigacao_total": 28015283.83,
+        "executado_total": 10346955.96,
+        "gap": 17668327.869999997,
+        "saldo_pct": 36.9,
+        "obrigacao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 4747393.48
+          },
+          {
+            "ano": 2019,
+            "valor": 2074833.72
+          },
+          {
+            "ano": 2020,
+            "valor": 1026414.01
+          },
+          {
+            "ano": 2021,
+            "valor": 4699604.38
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 0
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 15467038.239999998
+          }
+        ],
+        "execucao_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 2659339.33
+          },
+          {
+            "ano": 2019,
+            "valor": 1756032.28
+          },
+          {
+            "ano": 2020,
+            "valor": 0
+          },
+          {
+            "ano": 2021,
+            "valor": 1630742.74
+          },
+          {
+            "ano": 2022,
+            "valor": 0
+          },
+          {
+            "ano": 2023,
+            "valor": 4300841.61
+          },
+          {
+            "ano": 2024,
+            "valor": 0
+          },
+          {
+            "ano": 2025,
+            "valor": 0
+          }
+        ]
       }
     ],
     "temas_tree": [
