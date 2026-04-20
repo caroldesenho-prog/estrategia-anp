@@ -13,6 +13,7 @@ import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucao
 import { TempoExecucaoChart } from "@/components/dashboard/TempoExecucaoChart";
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
+import { VerticalGap } from "@/components/dashboard/VerticalGap";
 
 
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
