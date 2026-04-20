@@ -13,7 +13,7 @@ import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucao
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
 
-import { VerticalGap } from "@/components/dashboard/VerticalGap";
+
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
 import { Top5OperadorasFit } from "@/components/dashboard/Top5OperadorasFit";
@@ -140,15 +140,11 @@ const Index = () => {
               <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />
             </SectionCard>
 
-            <SectionCard title="2 · Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
-              <VerticalGap data={verticalData.gap_por_operadora} />
-            </SectionCard>
-
-            <SectionCard title="3 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
+            <SectionCard title="2 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
               <VerticalCrescimento data={verticalData.crescimento_subtemas} />
             </SectionCard>
 
-            <SectionCard title="4 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
+            <SectionCard title="3 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
               <VerticalTemas
                 data={verticalData.temas_com_fit}
                 cor={cor}
