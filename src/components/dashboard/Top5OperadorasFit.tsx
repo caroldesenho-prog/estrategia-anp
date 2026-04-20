@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { OperadoraFit, FitVerticalBlock, ProjetoAnp } from "@/types/dashboard";
+import { OperadoraFit, FitVerticalBlock, ProjetoAnp, Vertical } from "@/types/dashboard";
 import { formatBRL, formatNumber } from "@/lib/format";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 
 interface Props {
   data: OperadoraFit[];
+  vertical: Vertical;
 }
 
 interface DrawerState {
