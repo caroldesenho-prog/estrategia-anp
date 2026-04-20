@@ -20,7 +20,9 @@ const TooltipStack = ({ active, payload, label }: any) => {
 };
 
 export const GapOperadoraSection = ({ obrigVsExec, gaps }: Props) => {
-  const top12 = [...obrigVsExec].sort((a, b) => b.executado - a.executado).slice(0, 12);
+  const top12 = [...obrigVsExec].sort((a, b) => b.executado - a.executado).slice(0, 12).reverse();
+  // reverse so the largest renders at the top of a vertical bar chart
+  const top12Display = [...top12].reverse();
   const sortedGaps = [...gaps].sort((a, b) => b.valor_gap - a.valor_gap);
 
   return (

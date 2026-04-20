@@ -17,7 +17,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 export const OperadorasChart = ({ data }: Props) => {
-  const sorted = [...data].sort((a, b) => a.total - b.total);
+  const sorted = [...data].sort((a, b) => b.total - a.total);
   return (
     <div style={{ width: "100%", height: Math.max(360, sorted.length * 28) }}>
       <ResponsiveContainer>
