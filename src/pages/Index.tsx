@@ -13,7 +13,7 @@ import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucao
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
 
-import { VerticalGap } from "@/components/dashboard/VerticalGap";
+
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
 import { Top5OperadorasFit } from "@/components/dashboard/Top5OperadorasFit";
