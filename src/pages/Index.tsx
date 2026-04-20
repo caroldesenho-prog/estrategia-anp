@@ -12,7 +12,7 @@ import { IctsPreferidasTable } from "@/components/dashboard/IctsPreferidasTable"
 import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucaoChart";
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
-import { VerticalLabs } from "@/components/dashboard/VerticalLabs";
+
 import { VerticalGap } from "@/components/dashboard/VerticalGap";
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
