@@ -1,4 +1,4 @@
-export type Period = "3anos" | "5anos";
+export type Period = "3anos" | "5anos" | "8anos";
 export type Vertical =
   | "Manufatura Avançada"
   | "Tecnologias Digitais Avançadas"
