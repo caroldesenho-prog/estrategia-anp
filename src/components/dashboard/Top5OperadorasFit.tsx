@@ -62,12 +62,15 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
                 <span className="font-semibold text-foreground">{op.operadora}</span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.volume_total)}</span>
                 <span className="text-right tabular-nums text-foreground">{formatNumber(op.projetos_total)}</span>
-                <span className="flex justify-end">
+                <span className="flex flex-col items-end leading-tight">
                   <span
                     className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold tabular-nums"
                     style={{ backgroundColor: "#FCEBEB", color: "#A32D2D" }}
                   >
                     {formatNumber(oportunidades)}
+                  </span>
+                  <span className="mt-0.5 text-[10px] tabular-nums text-muted-foreground">
+                    {formatBRL(oportunidadesValor)}
                   </span>
                 </span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.fit_manufatura.valor_total)}</span>
