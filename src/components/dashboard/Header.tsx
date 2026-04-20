@@ -22,7 +22,7 @@ export const Header = ({ period, view, onPeriodChange, onViewChange }: Props) =>
             <Radar className="h-5 w-5" />
           </div>
           <div>
-            <h1 className="text-xl font-bold tracking-tight text-foreground">Radar PD&I ANP</h1>
+            <h1 className="text-xl font-bold tracking-tight text-foreground">Estratégia ANP — Inovação em Negócios</h1>
             <p className="text-xs text-muted-foreground">Inteligência estratégica · projetos PD&I</p>
           </div>
         </div>
