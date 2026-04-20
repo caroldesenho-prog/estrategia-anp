@@ -43,7 +43,11 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
 
         {data.map((op, idx) => {
           const isOpen = openIdx === idx;
-          const oportunidades = isDigital ? op.fit_digital.gap_sem_ict : op.fit_manufatura.gap_sem_ict;
+          const block = isDigital ? op.fit_digital : op.fit_manufatura;
+          const oportunidades = block.gap_sem_ict;
+          const oportunidadesValor = block.subtemas
+            .filter((s) => s.sem_ict > 0)
+            .reduce((acc, s) => acc + (s.valor || 0), 0);
           return (
             <div key={op.operadora} className="border-b border-border last:border-b-0">
               <button
