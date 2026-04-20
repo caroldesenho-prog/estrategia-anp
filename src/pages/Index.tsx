@@ -76,21 +76,6 @@ const Index = () => {
               <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
                 Obrigação = valor gerado pela cláusula PD&amp;I no período selecionado. Execução = valor dos projetos iniciados no mesmo período. Execução pode superar a obrigação porque projetos aprovados em anos anteriores continuam sendo desembolsados — os valores refletem o momento de início do projeto, não o desembolso anual.
               </p>
-              <div className="mb-4 inline-flex rounded-md border border-border bg-background p-0.5">
-                {(["3anos", "5anos", "8anos"] as Period[]).map((p) => (
-                  <button
-                    key={p}
-                    onClick={() => setPeriod(p)}
-                    className={`rounded px-3 py-1 text-xs font-medium transition-colors ${
-                      period === p
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {p === "3anos" ? "3 anos" : p === "5anos" ? "5 anos" : "8 anos"}
-                  </button>
-                ))}
-              </div>
               <ObrigacaoExecucaoChart data={periodData.obrigacao_vs_execucao} />
             </SectionCard>
 
