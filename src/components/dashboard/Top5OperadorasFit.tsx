@@ -172,6 +172,22 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
         })}
       </div>
 
+      <div className="mt-3 flex items-center justify-end gap-2 rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm">
+        <span className="font-semibold text-foreground">Total de oportunidades sem ICT:</span>
+        <span
+          className="inline-flex items-center rounded-md px-2.5 py-1 text-sm font-bold tabular-nums"
+          style={{ backgroundColor: "#FCEBEB", color: "#A32D2D" }}
+        >
+          {formatNumber(
+            data.reduce(
+              (acc, op) => acc + (isDigital ? op.fit_digital.gap_sem_ict : op.fit_manufatura.gap_sem_ict),
+              0,
+            ),
+          )}{" "}
+          projetos
+        </span>
+      </div>
+
       <Sheet open={!!drawer} onOpenChange={(o) => !o && setDrawer(null)}>
         <SheetContent side="right" className="w-full overflow-y-auto sm:max-w-[480px]">
           {drawer && (
