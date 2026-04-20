@@ -1,4 +1,4 @@
-export type Period = "3anos" | "5anos";
+export type Period = "3anos" | "5anos" | "8anos";
 export type Vertical =
   | "Manufatura Avançada"
   | "Tecnologias Digitais Avançadas"
@@ -154,5 +154,6 @@ export interface VerticalMeta { cor: string; labs: string[]; }
 export interface DashboardData {
   "3anos": PeriodData;
   "5anos": PeriodData;
+  "8anos": PeriodData;
   verticais_meta: Record<Vertical, VerticalMeta>;
 }

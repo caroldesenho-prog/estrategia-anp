@@ -48,7 +48,7 @@ export const Header = ({ period, view, onPeriodChange, onViewChange }: Props) =>
             Período
           </label>
           <div className="inline-flex rounded-md border border-border bg-background p-0.5">
-            {(["3anos", "5anos"] as Period[]).map((p) => (
+            {(["3anos", "5anos", "8anos"] as Period[]).map((p) => (
               <button
                 key={p}
                 onClick={() => onPeriodChange(p)}
@@ -58,7 +58,7 @@ export const Header = ({ period, view, onPeriodChange, onViewChange }: Props) =>
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {p === "3anos" ? "3 anos" : "5 anos"}
+                {p === "3anos" ? "3 anos" : p === "5anos" ? "5 anos" : "8 anos"}
               </button>
             ))}
           </div>
