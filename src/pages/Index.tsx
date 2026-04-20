@@ -1,78 +1,158 @@
 import { useMemo, useState } from "react";
-import dashboardJson from "@/data/dashboard_data.json";
-import { DashboardData, Period, Vertical } from "@/types/dashboard";
+import dashboardJson from "@/data/dashboard_data_v2.json";
+import { DashboardData, Period, Vertical, View } from "@/types/dashboard";
 import { Header } from "@/components/dashboard/Header";
 import { KpiCards } from "@/components/dashboard/KpiCards";
 import { SectionCard } from "@/components/dashboard/SectionCard";
 import { OperadorasChart } from "@/components/dashboard/OperadorasChart";
 import { ParceirosTable } from "@/components/dashboard/ParceirosTable";
 import { ConcorrentesIcts } from "@/components/dashboard/ConcorrentesIcts";
-import { FitVertical } from "@/components/dashboard/FitVertical";
-import { TemasTree } from "@/components/dashboard/TemasTree";
-import { GapOperadoraSection } from "@/components/dashboard/GapOperadora";
+import { TaxaIctChart } from "@/components/dashboard/TaxaIctChart";
+import { IctsPreferidasTable } from "@/components/dashboard/IctsPreferidasTable";
+import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucaoChart";
+import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
+import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
+import { VerticalLabs } from "@/components/dashboard/VerticalLabs";
+import { VerticalGap } from "@/components/dashboard/VerticalGap";
+import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
+import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
+import { formatBRL, formatNumber, formatPct } from "@/lib/format";
+import { Briefcase, Wallet, CheckCircle2, AlertCircle, Target, TrendingUp, AlertTriangle, Coins } from "lucide-react";
 
 const data = dashboardJson as unknown as DashboardData;
 
 const Index = () => {
   const [period, setPeriod] = useState<Period>("3anos");
+  const [view, setView] = useState<View>("geral");
   const [vertical, setVertical] = useState<Vertical>("Manufatura Avançada");
 
   const periodData = useMemo(() => data[period], [period]);
-  const labMap = data.competencias.lab_map;
+  const verticalData = periodData.por_vertical[vertical];
+  const cor = data.verticais_meta[vertical]?.cor ?? "#1F4E79";
 
   return (
     <div className="min-h-screen bg-background">
-      <Header
-        period={period}
-        vertical={vertical}
-        onPeriodChange={setPeriod}
-        onVerticalChange={setVertical}
-      />
+      <Header period={period} view={view} onPeriodChange={setPeriod} onViewChange={setView} />
 
       <main className="mx-auto max-w-[1440px] space-y-6 px-6 py-6">
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">
-            Período de análise: <span className="font-semibold text-foreground">{periodData.periodo}</span>
-            {" · "}Vertical: <span className="font-semibold text-foreground">{vertical}</span>
-          </p>
-        </div>
+        <p className="text-sm text-muted-foreground">
+          Período de análise: <span className="font-semibold text-foreground">{periodData.periodo}</span>
+          {view === "vertical" && (
+            <>
+              {" · "}Vertical: <span className="font-semibold" style={{ color: cor }}>{vertical}</span>
+            </>
+          )}
+        </p>
 
-        <KpiCards resumo={periodData.resumo} />
+        {view === "geral" ? (
+          <>
+            <KpiCards
+              items={[
+                { label: "Total de projetos", value: formatNumber(periodData.resumo_geral.total_projetos), icon: Briefcase },
+                { label: "Volume total", value: formatBRL(periodData.resumo_geral.total_valor), icon: Wallet },
+                {
+                  label: "% com ICT",
+                  value: formatPct(periodData.resumo_geral.pct_com_ict),
+                  icon: CheckCircle2,
+                  tone: "bg-success-soft text-success",
+                },
+                {
+                  label: "% sem ICT",
+                  value: formatPct(periodData.resumo_geral.pct_sem_ict),
+                  icon: AlertCircle,
+                  tone: "bg-warning-soft text-warning",
+                },
+              ]}
+            />
 
-        <SectionCard title="1 · Onde o dinheiro está" subtitle="Top 15 operadoras por volume investido em PD&I">
-          <OperadorasChart data={periodData.top15_operadoras} />
-        </SectionCard>
+            <SectionCard title="1 · Onde o dinheiro está" subtitle="Top 15 operadoras por volume investido em PD&I">
+              <OperadorasChart data={periodData.top15_operadoras} />
+            </SectionCard>
 
-        <SectionCard title="2 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
-          <ParceirosTable data={periodData.parceiros} />
-        </SectionCard>
+            <SectionCard
+              title="2 · Taxa de uso de ICT por operadora"
+              subtitle="Composição dos projetos: com ICT, com empresa BR sem ICT, sem nenhum"
+            >
+              <TaxaIctChart data={periodData.taxa_ict_operadora} />
+            </SectionCard>
 
-        <SectionCard title="3 · Concorrentes ICTs" subtitle="Posicionamento de ICTs e concentração por operadora">
-          <ConcorrentesIcts concorrentes={periodData.concorrentes} heatmap={periodData.heatmap_ict_op} />
-        </SectionCard>
+            <SectionCard title="3 · ICTs preferidas por operadora" subtitle="Top 3 ICTs mais contratadas por operadora">
+              <IctsPreferidasTable data={periodData.ict_por_operadora} />
+            </SectionCard>
 
-        <SectionCard
-          title={`4 · Fit com ${vertical}`}
-          subtitle="Subtemas ANP endereçáveis e laboratórios do instituto"
-        >
-          <FitVertical
-            subtemas={periodData.top10_subtemas_fit}
-            labs={periodData.fit_por_lab}
-            vertical={vertical}
-            labMap={labMap}
-          />
-        </SectionCard>
+            <SectionCard title="4 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
+              <ParceirosTable data={periodData.parceiros} />
+            </SectionCard>
 
-        <SectionCard title="5 · 23 Temas e subtemas ANP" subtitle="Clique em um tema para ver os subtemas. Linhas em verde indicam fit com a vertical.">
-          <TemasTree data={periodData.temas_tree} />
-        </SectionCard>
+            <SectionCard title="5 · Concorrentes ICTs" subtitle="Posicionamento de ICTs e concentração por operadora">
+              <ConcorrentesIcts concorrentes={periodData.concorrentes} heatmap={periodData.heatmap_ict_op} />
+            </SectionCard>
 
-        <SectionCard title="6 · Gap por operadora" subtitle="Obrigação vs executado e oportunidades sem ICT alocada">
-          <GapOperadoraSection
-            obrigVsExec={periodData.obrigacao_vs_execucao}
-            gaps={periodData.gap_por_operadora}
-          />
-        </SectionCard>
+            <SectionCard title="6 · Obrigação vs Execução" subtitle="Comparativo entre obrigação total e valor executado por operadora">
+              <ObrigacaoExecucaoChart data={periodData.obrigacao_vs_execucao} />
+            </SectionCard>
+          </>
+        ) : (
+          <>
+            <SectionCard title="Selecione a vertical">
+              <VerticalSelector meta={data.verticais_meta} selected={vertical} onChange={setVertical} />
+            </SectionCard>
+
+            <KpiCards
+              items={[
+                {
+                  label: "Projetos com fit",
+                  value: formatNumber(verticalData.resumo.projetos_fit),
+                  sub: formatPct(verticalData.resumo.pct_fit) + " do total",
+                  icon: Target,
+                  tone: "bg-success-soft text-success",
+                },
+                {
+                  label: "Volume endereçável",
+                  value: formatBRL(verticalData.resumo.valor_fit),
+                  icon: TrendingUp,
+                  tone: "bg-primary-soft text-primary",
+                },
+                {
+                  label: "Gap sem ICT (projetos)",
+                  value: formatNumber(verticalData.resumo.gap_projetos),
+                  icon: AlertTriangle,
+                  tone: "bg-warning-soft text-warning",
+                },
+                {
+                  label: "Gap sem ICT (valor)",
+                  value: formatBRL(verticalData.resumo.gap_valor),
+                  icon: Coins,
+                  tone: "bg-warning-soft text-warning",
+                },
+              ]}
+            />
+
+            <SectionCard title="1 · Top 10 subtemas ANP com fit" subtitle="Ordenado por volume com indicador de % sem ICT">
+              <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />
+            </SectionCard>
+
+            <SectionCard title="2 · Fit por laboratório" subtitle={`Laboratórios da vertical ${vertical} e subtemas ANP mapeados`}>
+              <VerticalLabs data={verticalData.fit_por_lab} cor={cor} />
+            </SectionCard>
+
+            <SectionCard title="3 · Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
+              <VerticalGap data={verticalData.gap_por_operadora} />
+            </SectionCard>
+
+            <SectionCard title="4 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
+              <VerticalCrescimento data={verticalData.crescimento_subtemas} />
+            </SectionCard>
+
+            <SectionCard title="5 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
+              <VerticalTemas
+                data={verticalData.temas_com_fit}
+                cor={cor}
+                fitSubtemas={new Set(verticalData.top10_subtemas.map((s) => s.subtema))}
+              />
+            </SectionCard>
+          </>
+        )}
 
         <footer className="py-6 text-center text-xs text-muted-foreground">
           Radar PD&I ANP · dados processados a partir do repositório de projetos PD&I
