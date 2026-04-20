@@ -13,6 +13,7 @@ import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucao
 import { TempoExecucaoChart } from "@/components/dashboard/TempoExecucaoChart";
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
+import { VerticalGap } from "@/components/dashboard/VerticalGap";
 
 
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
@@ -150,6 +151,10 @@ const Index = () => {
                 },
               ]}
             />
+
+            <SectionCard title="Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
+              <VerticalGap data={verticalData.gap_por_operadora} />
+            </SectionCard>
 
             <SectionCard
               title="Top 5 operadoras — oportunidade por vertical"
