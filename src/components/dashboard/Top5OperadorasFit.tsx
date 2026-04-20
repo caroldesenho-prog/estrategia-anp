@@ -31,22 +31,24 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
     <>
       <div className="overflow-hidden rounded-lg border border-border">
         {/* Header */}
-        <div className="grid grid-cols-[24px_1.6fr_1fr_1fr_1fr_1fr] items-center gap-3 border-b border-border bg-muted/40 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+        <div className="grid grid-cols-[24px_1.4fr_1fr_0.8fr_1.1fr_1fr_1fr] items-center gap-3 border-b border-border bg-muted/40 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
           <span />
           <span>Operadora</span>
           <span className="text-right">Volume total</span>
           <span className="text-right">Projetos</span>
+          <span className="text-right">Oportunidades s/ ICT</span>
           <span className="text-right">Fit Manufatura</span>
           <span className="text-right">Fit Digital</span>
         </div>
 
         {data.map((op, idx) => {
           const isOpen = openIdx === idx;
+          const oportunidades = isDigital ? op.fit_digital.gap_sem_ict : op.fit_manufatura.gap_sem_ict;
           return (
             <div key={op.operadora} className="border-b border-border last:border-b-0">
               <button
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
-                className="grid w-full grid-cols-[24px_1.6fr_1fr_1fr_1fr_1fr] items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-muted/30"
+                className="grid w-full grid-cols-[24px_1.4fr_1fr_0.8fr_1.1fr_1fr_1fr] items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-muted/30"
               >
                 {isOpen ? (
                   <ChevronDown className="h-4 w-4 text-muted-foreground" />
@@ -56,6 +58,14 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
                 <span className="font-semibold text-foreground">{op.operadora}</span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.volume_total)}</span>
                 <span className="text-right tabular-nums text-foreground">{formatNumber(op.projetos_total)}</span>
+                <span className="flex justify-end">
+                  <span
+                    className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold tabular-nums"
+                    style={{ backgroundColor: "#FCEBEB", color: "#A32D2D" }}
+                  >
+                    {formatNumber(oportunidades)}
+                  </span>
+                </span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.fit_manufatura.valor_total)}</span>
                 <span className="text-right tabular-nums text-foreground">{formatBRL(op.fit_digital.valor_total)}</span>
               </button>
