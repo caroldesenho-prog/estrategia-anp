@@ -10714,7 +10714,605 @@
           }
         ]
       }
-    }
+    },
+    "tempo_execucao_operadoras": [
+      {
+        "operadora": "PETROBRAS",
+        "prazo_medio_geral": 33.1,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 356,
+        "projetos_em_andamento": 1471,
+        "projetos_indefinidos": 0,
+        "total_projetos": 1827,
+        "pct_andamento": 80.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "FORMAÇÃO DE RECURSOS HUMANOS",
+            "prazo_medio": 46.5
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 42.7
+          },
+          {
+            "qualificacao": "PESQUISA EM CIÊNCIAS SOCIAIS, HUMANAS E DA VIDA",
+            "prazo_medio": 37.3
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 35.5
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 34.4
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 4762343538.46,
+            "projetos": 527,
+            "prazo_medio_meses": 30.2
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51,
+            "projetos": 631,
+            "prazo_medio_meses": 33.7
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95,
+            "projetos": 658,
+            "prazo_medio_meses": 34.8
+          },
+          {
+            "ano": 2026,
+            "valor": 141752477.96,
+            "projetos": 11,
+            "prazo_medio_meses": 39.5
+          }
+        ]
+      },
+      {
+        "operadora": "SHELL",
+        "prazo_medio_geral": 40.1,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 14,
+        "projetos_em_andamento": 92,
+        "projetos_indefinidos": 0,
+        "total_projetos": 106,
+        "pct_andamento": 86.8,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 47.5
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 43.0
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 40.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 33.8
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 23.2
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 473035095.25,
+            "projetos": 23,
+            "prazo_medio_meses": 31.2
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62,
+            "projetos": 52,
+            "prazo_medio_meses": 46.7
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06,
+            "projetos": 30,
+            "prazo_medio_meses": 36.2
+          },
+          {
+            "ano": 2026,
+            "valor": 2917070.29,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "TOTAL",
+        "prazo_medio_geral": 30.7,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 19,
+        "projetos_em_andamento": 59,
+        "projetos_indefinidos": 0,
+        "total_projetos": 78,
+        "pct_andamento": 75.6,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 35.2
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 34.9
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 32.5
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 23.7
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 193699806.47,
+            "projetos": 37,
+            "prazo_medio_meses": 32.4
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15,
+            "projetos": 29,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0,
+            "projetos": 12,
+            "prazo_medio_meses": 33.2
+          }
+        ]
+      },
+      {
+        "operadora": "PETROGAL",
+        "prazo_medio_geral": 27.3,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 11,
+        "projetos_em_andamento": 43,
+        "projetos_indefinidos": 0,
+        "total_projetos": 54,
+        "pct_andamento": 79.6,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 33.0
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 31.1
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 30.5
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 17.4
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 175993896.87,
+            "projetos": 18,
+            "prazo_medio_meses": 30.1
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85,
+            "projetos": 16,
+            "prazo_medio_meses": 24.4
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79,
+            "projetos": 20,
+            "prazo_medio_meses": 27.1
+          }
+        ]
+      },
+      {
+        "operadora": "EXXONMOBIL",
+        "prazo_medio_geral": 33.8,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 7,
+        "projetos_em_andamento": 39,
+        "projetos_indefinidos": 0,
+        "total_projetos": 46,
+        "pct_andamento": 84.8,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "ESTUDO DE BACIAS COM AQUISIÇÃO DE DADOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 42.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 39.5
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 29.2
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 108177527.8,
+            "projetos": 15,
+            "prazo_medio_meses": 40.4
+          },
+          {
+            "ano": 2024,
+            "valor": 122876070.06,
+            "projetos": 17,
+            "prazo_medio_meses": 28.6
+          },
+          {
+            "ano": 2025,
+            "valor": 101167741.04,
+            "projetos": 13,
+            "prazo_medio_meses": 34.3
+          },
+          {
+            "ano": 2026,
+            "valor": 4711561.97,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "PETRONAS",
+        "prazo_medio_geral": 33.9,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 4,
+        "projetos_em_andamento": 26,
+        "projetos_indefinidos": 0,
+        "total_projetos": 30,
+        "pct_andamento": 86.7,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 40.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 34.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 23.3
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 185797378.33,
+            "projetos": 14,
+            "prazo_medio_meses": 39.1
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12,
+            "projetos": 16,
+            "prazo_medio_meses": 29.2
+          }
+        ]
+      },
+      {
+        "operadora": "REPSOL",
+        "prazo_medio_geral": 21.8,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 11,
+        "projetos_em_andamento": 11,
+        "projetos_indefinidos": 0,
+        "total_projetos": 22,
+        "pct_andamento": 50.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 25.6
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 21.1
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 21.0
+          },
+          {
+            "qualificacao": "CAPACITAÇÃO DE FORNECEDORES",
+            "prazo_medio": 12.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001,
+            "projetos": 11,
+            "prazo_medio_meses": 21.3
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42,
+            "projetos": 7,
+            "prazo_medio_meses": 23.9
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5,
+            "projetos": 3,
+            "prazo_medio_meses": 20.0
+          },
+          {
+            "ano": 2026,
+            "valor": 8126880.48,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR BRASIL",
+        "prazo_medio_geral": 31.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 1,
+        "projetos_em_andamento": 16,
+        "projetos_indefinidos": 0,
+        "total_projetos": 17,
+        "pct_andamento": 94.1,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.7
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 22.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 18.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 12518413.4,
+            "projetos": 1,
+            "prazo_medio_meses": 24.0
+          },
+          {
+            "ano": 2024,
+            "valor": 86862965.63,
+            "projetos": 7,
+            "prazo_medio_meses": 34.0
+          },
+          {
+            "ano": 2025,
+            "valor": 102820215.05,
+            "projetos": 9,
+            "prazo_medio_meses": 30.7
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR ENERGY",
+        "prazo_medio_geral": 40.4,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 3,
+        "projetos_em_andamento": 12,
+        "projetos_indefinidos": 0,
+        "total_projetos": 15,
+        "pct_andamento": 80.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 45.5
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 20.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 109559512.74,
+            "projetos": 10,
+            "prazo_medio_meses": 45.6
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58,
+            "projetos": 2,
+            "prazo_medio_meses": 21.0
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02,
+            "projetos": 3,
+            "prazo_medio_meses": 36.0
+          }
+        ]
+      },
+      {
+        "operadora": "CNODC",
+        "prazo_medio_geral": 31.5,
+        "prazo_mediano": 30.0,
+        "projetos_concluidos": 3,
+        "projetos_em_andamento": 5,
+        "projetos_indefinidos": 0,
+        "total_projetos": 8,
+        "pct_andamento": 62.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 21.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 42143800.32,
+            "projetos": 6,
+            "prazo_medio_meses": 32.0
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55,
+            "projetos": 2,
+            "prazo_medio_meses": 30.0
+          }
+        ]
+      },
+      {
+        "operadora": "CNOOC",
+        "prazo_medio_geral": 34.9,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 5,
+        "projetos_em_andamento": 13,
+        "projetos_indefinidos": 0,
+        "total_projetos": 18,
+        "pct_andamento": 72.2,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.6
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 23.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 32007717.87,
+            "projetos": 7,
+            "prazo_medio_meses": 29.1
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34,
+            "projetos": 4,
+            "prazo_medio_meses": 32.8
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64,
+            "projetos": 7,
+            "prazo_medio_meses": 42.0
+          }
+        ]
+      },
+      {
+        "operadora": "QATAR ENERGY",
+        "prazo_medio_geral": 34.1,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 0,
+        "projetos_em_andamento": 8,
+        "projetos_indefinidos": 0,
+        "total_projetos": 8,
+        "pct_andamento": 100.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 24.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 10108446.49,
+            "projetos": 1,
+            "prazo_medio_meses": 33.0
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33,
+            "projetos": 4,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44,
+            "projetos": 3,
+            "prazo_medio_meses": 32.0
+          }
+        ]
+      }
+    ]
   },
   "5anos": {
     "periodo": "2021-2025",
@@ -21667,7 +22265,713 @@
           }
         ]
       }
-    }
+    },
+    "tempo_execucao_operadoras": [
+      {
+        "operadora": "PETROBRAS",
+        "prazo_medio_geral": 31.1,
+        "prazo_mediano": 30.0,
+        "projetos_concluidos": 1458,
+        "projetos_em_andamento": 1572,
+        "projetos_indefinidos": 0,
+        "total_projetos": 3030,
+        "pct_andamento": 51.9,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "FORMAÇÃO DE RECURSOS HUMANOS",
+            "prazo_medio": 46.5
+          },
+          {
+            "qualificacao": "PESQUISA EM CIÊNCIAS SOCIAIS, HUMANAS E DA VIDA",
+            "prazo_medio": 38.6
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 38.2
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 32.7
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 32.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 1626745783.56,
+            "projetos": 730,
+            "prazo_medio_meses": 27.3
+          },
+          {
+            "ano": 2022,
+            "valor": 2601378748.76,
+            "projetos": 473,
+            "prazo_medio_meses": 28.9
+          },
+          {
+            "ano": 2023,
+            "valor": 4762343538.46,
+            "projetos": 527,
+            "prazo_medio_meses": 30.2
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51,
+            "projetos": 631,
+            "prazo_medio_meses": 33.7
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95,
+            "projetos": 658,
+            "prazo_medio_meses": 34.8
+          },
+          {
+            "ano": 2026,
+            "valor": 141752477.96,
+            "projetos": 11,
+            "prazo_medio_meses": 39.5
+          }
+        ]
+      },
+      {
+        "operadora": "SHELL",
+        "prazo_medio_geral": 37.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 81,
+        "projetos_em_andamento": 116,
+        "projetos_indefinidos": 0,
+        "total_projetos": 197,
+        "pct_andamento": 58.9,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM CIÊNCIAS SOCIAIS, HUMANAS E DA VIDA",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 45.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 42.0
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 41.2
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 235165840.75,
+            "projetos": 28,
+            "prazo_medio_meses": 38.8
+          },
+          {
+            "ano": 2022,
+            "valor": 1247614144.26,
+            "projetos": 63,
+            "prazo_medio_meses": 32.9
+          },
+          {
+            "ano": 2023,
+            "valor": 473035095.25,
+            "projetos": 23,
+            "prazo_medio_meses": 31.2
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62,
+            "projetos": 52,
+            "prazo_medio_meses": 46.7
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06,
+            "projetos": 30,
+            "prazo_medio_meses": 36.2
+          },
+          {
+            "ano": 2026,
+            "valor": 2917070.29,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "TOTAL",
+        "prazo_medio_geral": 30.4,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 34,
+        "projetos_em_andamento": 60,
+        "projetos_indefinidos": 0,
+        "total_projetos": 94,
+        "pct_andamento": 63.8,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 33.8
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 33.7
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 31.9
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 23.7
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 139068711.58,
+            "projetos": 10,
+            "prazo_medio_meses": 29.0
+          },
+          {
+            "ano": 2022,
+            "valor": 68484276.18,
+            "projetos": 6,
+            "prazo_medio_meses": 29.2
+          },
+          {
+            "ano": 2023,
+            "valor": 193699806.47,
+            "projetos": 37,
+            "prazo_medio_meses": 32.4
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15,
+            "projetos": 29,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0,
+            "projetos": 12,
+            "prazo_medio_meses": 33.2
+          }
+        ]
+      },
+      {
+        "operadora": "PETROGAL",
+        "prazo_medio_geral": 27.6,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 25,
+        "projetos_em_andamento": 43,
+        "projetos_indefinidos": 0,
+        "total_projetos": 68,
+        "pct_andamento": 63.2,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 32.3
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 30.6
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 30.2
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 28.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 92059501.15,
+            "projetos": 10,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2022,
+            "valor": 86658206.4,
+            "projetos": 4,
+            "prazo_medio_meses": 31.0
+          },
+          {
+            "ano": 2023,
+            "valor": 175993896.87,
+            "projetos": 18,
+            "prazo_medio_meses": 30.1
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85,
+            "projetos": 16,
+            "prazo_medio_meses": 24.4
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79,
+            "projetos": 20,
+            "prazo_medio_meses": 27.1
+          }
+        ]
+      },
+      {
+        "operadora": "REPSOL",
+        "prazo_medio_geral": 22.5,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 33,
+        "projetos_em_andamento": 11,
+        "projetos_indefinidos": 0,
+        "total_projetos": 44,
+        "pct_andamento": 25.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "APOIO A INSTALAÇÃO LABORATORIAL DE P,D&I",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 24.2
+          },
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 24.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 44281745.54,
+            "projetos": 7,
+            "prazo_medio_meses": 21.4
+          },
+          {
+            "ano": 2022,
+            "valor": 158449780.55,
+            "projetos": 15,
+            "prazo_medio_meses": 24.1
+          },
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001,
+            "projetos": 11,
+            "prazo_medio_meses": 21.3
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42,
+            "projetos": 7,
+            "prazo_medio_meses": 23.9
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5,
+            "projetos": 3,
+            "prazo_medio_meses": 20.0
+          },
+          {
+            "ano": 2026,
+            "valor": 8126880.48,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "EXXONMOBIL",
+        "prazo_medio_geral": 33.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 12,
+        "projetos_em_andamento": 39,
+        "projetos_indefinidos": 0,
+        "total_projetos": 51,
+        "pct_andamento": 76.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "ESTUDO DE BACIAS COM AQUISIÇÃO DE DADOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 45.6
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 42.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 38.6
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 28.3
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 1561802.88,
+            "projetos": 1,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2022,
+            "valor": 17436909.58,
+            "projetos": 4,
+            "prazo_medio_meses": 30.0
+          },
+          {
+            "ano": 2023,
+            "valor": 108177527.8,
+            "projetos": 15,
+            "prazo_medio_meses": 40.4
+          },
+          {
+            "ano": 2024,
+            "valor": 122876070.06,
+            "projetos": 17,
+            "prazo_medio_meses": 28.6
+          },
+          {
+            "ano": 2025,
+            "valor": 101167741.04,
+            "projetos": 13,
+            "prazo_medio_meses": 34.3
+          },
+          {
+            "ano": 2026,
+            "valor": 4711561.97,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "PETRONAS",
+        "prazo_medio_geral": 35.8,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 13,
+        "projetos_em_andamento": 31,
+        "projetos_indefinidos": 0,
+        "total_projetos": 44,
+        "pct_andamento": 70.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "ESTUDO DE BACIAS COM AQUISIÇÃO DE DADOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 44.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.5
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 54612012.69,
+            "projetos": 7,
+            "prazo_medio_meses": 41.1
+          },
+          {
+            "ano": 2022,
+            "valor": 41764891.63,
+            "projetos": 7,
+            "prazo_medio_meses": 38.6
+          },
+          {
+            "ano": 2023,
+            "valor": 185797378.33,
+            "projetos": 14,
+            "prazo_medio_meses": 39.1
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12,
+            "projetos": 16,
+            "prazo_medio_meses": 29.2
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR ENERGY",
+        "prazo_medio_geral": 37.5,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 14,
+        "projetos_em_andamento": 18,
+        "projetos_indefinidos": 0,
+        "total_projetos": 32,
+        "pct_andamento": 56.2,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 40.2
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 26.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 31142361.4,
+            "projetos": 5,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2022,
+            "valor": 90247577.94,
+            "projetos": 12,
+            "prazo_medio_meses": 38.0
+          },
+          {
+            "ano": 2023,
+            "valor": 109559512.74,
+            "projetos": 10,
+            "prazo_medio_meses": 45.6
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58,
+            "projetos": 2,
+            "prazo_medio_meses": 21.0
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02,
+            "projetos": 3,
+            "prazo_medio_meses": 36.0
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR BRASIL",
+        "prazo_medio_geral": 31.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 1,
+        "projetos_em_andamento": 16,
+        "projetos_indefinidos": 0,
+        "total_projetos": 17,
+        "pct_andamento": 94.1,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.7
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 22.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 18.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 12518413.4,
+            "projetos": 1,
+            "prazo_medio_meses": 24.0
+          },
+          {
+            "ano": 2024,
+            "valor": 86862965.63,
+            "projetos": 7,
+            "prazo_medio_meses": 34.0
+          },
+          {
+            "ano": 2025,
+            "valor": 102820215.05,
+            "projetos": 9,
+            "prazo_medio_meses": 30.7
+          }
+        ]
+      },
+      {
+        "operadora": "CNODC",
+        "prazo_medio_geral": 33.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 4,
+        "projetos_em_andamento": 6,
+        "projetos_indefinidos": 0,
+        "total_projetos": 10,
+        "pct_andamento": 60.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.8
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 21.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2022,
+            "valor": 16363424.780000001,
+            "projetos": 2,
+            "prazo_medio_meses": 42.0
+          },
+          {
+            "ano": 2023,
+            "valor": 42143800.32,
+            "projetos": 6,
+            "prazo_medio_meses": 32.0
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55,
+            "projetos": 2,
+            "prazo_medio_meses": 30.0
+          }
+        ]
+      },
+      {
+        "operadora": "CNOOC",
+        "prazo_medio_geral": 35.0,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 6,
+        "projetos_em_andamento": 13,
+        "projetos_indefinidos": 0,
+        "total_projetos": 19,
+        "pct_andamento": 68.4,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.7
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 23.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2022,
+            "valor": 4258555.0,
+            "projetos": 1,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2023,
+            "valor": 32007717.87,
+            "projetos": 7,
+            "prazo_medio_meses": 29.1
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34,
+            "projetos": 4,
+            "prazo_medio_meses": 32.8
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64,
+            "projetos": 7,
+            "prazo_medio_meses": 42.0
+          }
+        ]
+      },
+      {
+        "operadora": "QATAR ENERGY",
+        "prazo_medio_geral": 34.1,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 0,
+        "projetos_em_andamento": 8,
+        "projetos_indefinidos": 0,
+        "total_projetos": 8,
+        "pct_andamento": 100.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 24.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 10108446.49,
+            "projetos": 1,
+            "prazo_medio_meses": 33.0
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33,
+            "projetos": 4,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44,
+            "projetos": 3,
+            "prazo_medio_meses": 32.0
+          }
+        ]
+      }
+    ]
   },
   "8anos": {
     "periodo": "2018-2025",
@@ -33043,7 +34347,821 @@
           }
         ]
       }
-    }
+    },
+    "tempo_execucao_operadoras": [
+      {
+        "operadora": "PETROBRAS",
+        "prazo_medio_geral": 31.8,
+        "prazo_mediano": 34.0,
+        "projetos_concluidos": 2717,
+        "projetos_em_andamento": 1572,
+        "projetos_indefinidos": 0,
+        "total_projetos": 4289,
+        "pct_andamento": 36.7,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "FORMAÇÃO DE RECURSOS HUMANOS",
+            "prazo_medio": 46.5
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 39.3
+          },
+          {
+            "qualificacao": "PESQUISA EM CIÊNCIAS SOCIAIS, HUMANAS E DA VIDA",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "TIB - NORMALIZAÇÃO",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 33.5
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 1507433228.8,
+            "projetos": 520,
+            "prazo_medio_meses": 32.9
+          },
+          {
+            "ano": 2019,
+            "valor": 2491402680.42,
+            "projetos": 604,
+            "prazo_medio_meses": 34.1
+          },
+          {
+            "ano": 2020,
+            "valor": 1269333565.49,
+            "projetos": 135,
+            "prazo_medio_meses": 35.4
+          },
+          {
+            "ano": 2021,
+            "valor": 1626745783.56,
+            "projetos": 730,
+            "prazo_medio_meses": 27.3
+          },
+          {
+            "ano": 2022,
+            "valor": 2601378748.76,
+            "projetos": 473,
+            "prazo_medio_meses": 28.9
+          },
+          {
+            "ano": 2023,
+            "valor": 4762343538.46,
+            "projetos": 527,
+            "prazo_medio_meses": 30.2
+          },
+          {
+            "ano": 2024,
+            "valor": 11159622612.51,
+            "projetos": 631,
+            "prazo_medio_meses": 33.7
+          },
+          {
+            "ano": 2025,
+            "valor": 7508789460.95,
+            "projetos": 658,
+            "prazo_medio_meses": 34.8
+          },
+          {
+            "ano": 2026,
+            "valor": 141752477.96,
+            "projetos": 11,
+            "prazo_medio_meses": 39.5
+          }
+        ]
+      },
+      {
+        "operadora": "SHELL",
+        "prazo_medio_geral": 37.5,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 174,
+        "projetos_em_andamento": 116,
+        "projetos_indefinidos": 0,
+        "total_projetos": 290,
+        "pct_andamento": 40.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 52.1
+          },
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM CIÊNCIAS SOCIAIS, HUMANAS E DA VIDA",
+            "prazo_medio": 44.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 43.6
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 40.8
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 433904065.21,
+            "projetos": 50,
+            "prazo_medio_meses": 41.0
+          },
+          {
+            "ano": 2019,
+            "valor": 416078088.2,
+            "projetos": 35,
+            "prazo_medio_meses": 32.0
+          },
+          {
+            "ano": 2020,
+            "valor": 32281583.200000003,
+            "projetos": 8,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2021,
+            "valor": 235165840.75,
+            "projetos": 28,
+            "prazo_medio_meses": 38.8
+          },
+          {
+            "ano": 2022,
+            "valor": 1247614144.26,
+            "projetos": 63,
+            "prazo_medio_meses": 32.9
+          },
+          {
+            "ano": 2023,
+            "valor": 473035095.25,
+            "projetos": 23,
+            "prazo_medio_meses": 31.2
+          },
+          {
+            "ano": 2024,
+            "valor": 452558622.62,
+            "projetos": 52,
+            "prazo_medio_meses": 46.7
+          },
+          {
+            "ano": 2025,
+            "valor": 499840649.06,
+            "projetos": 30,
+            "prazo_medio_meses": 36.2
+          },
+          {
+            "ano": 2026,
+            "valor": 2917070.29,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "TOTAL",
+        "prazo_medio_geral": 29.6,
+        "prazo_mediano": 33.0,
+        "projetos_concluidos": 45,
+        "projetos_em_andamento": 60,
+        "projetos_indefinidos": 0,
+        "total_projetos": 105,
+        "pct_andamento": 57.1,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 33.7
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 33.1
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 31.4
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 23.7
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2019,
+            "valor": 19759827.45,
+            "projetos": 3,
+            "prazo_medio_meses": 30.0
+          },
+          {
+            "ano": 2020,
+            "valor": 63011283.33,
+            "projetos": 8,
+            "prazo_medio_meses": 19.4
+          },
+          {
+            "ano": 2021,
+            "valor": 139068711.58,
+            "projetos": 10,
+            "prazo_medio_meses": 29.0
+          },
+          {
+            "ano": 2022,
+            "valor": 68484276.18,
+            "projetos": 6,
+            "prazo_medio_meses": 29.2
+          },
+          {
+            "ano": 2023,
+            "valor": 193699806.47,
+            "projetos": 37,
+            "prazo_medio_meses": 32.4
+          },
+          {
+            "ano": 2024,
+            "valor": 434853697.15,
+            "projetos": 29,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2025,
+            "valor": 121984948.0,
+            "projetos": 12,
+            "prazo_medio_meses": 33.2
+          }
+        ]
+      },
+      {
+        "operadora": "PETROGAL",
+        "prazo_medio_geral": 27.6,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 56,
+        "projetos_em_andamento": 43,
+        "projetos_indefinidos": 0,
+        "total_projetos": 99,
+        "pct_andamento": 43.4,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "FORMAÇÃO DE RECURSOS HUMANOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 32.6
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 31.2
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 30.7
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 72406174.99,
+            "projetos": 10,
+            "prazo_medio_meses": 32.4
+          },
+          {
+            "ano": 2019,
+            "valor": 91001765.4,
+            "projetos": 10,
+            "prazo_medio_meses": 24.6
+          },
+          {
+            "ano": 2020,
+            "valor": 112550865.64,
+            "projetos": 11,
+            "prazo_medio_meses": 26.5
+          },
+          {
+            "ano": 2021,
+            "valor": 92059501.15,
+            "projetos": 10,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2022,
+            "valor": 86658206.4,
+            "projetos": 4,
+            "prazo_medio_meses": 31.0
+          },
+          {
+            "ano": 2023,
+            "valor": 175993896.87,
+            "projetos": 18,
+            "prazo_medio_meses": 30.1
+          },
+          {
+            "ano": 2024,
+            "valor": 171062745.85,
+            "projetos": 16,
+            "prazo_medio_meses": 24.4
+          },
+          {
+            "ano": 2025,
+            "valor": 165949237.79,
+            "projetos": 20,
+            "prazo_medio_meses": 27.1
+          }
+        ]
+      },
+      {
+        "operadora": "REPSOL",
+        "prazo_medio_geral": 22.5,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 67,
+        "projetos_em_andamento": 11,
+        "projetos_indefinidos": 0,
+        "total_projetos": 78,
+        "pct_andamento": 14.1,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "APOIO A INSTALAÇÃO LABORATORIAL DE P,D&I",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 24.3
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "PESQUISA EM TIC",
+            "prazo_medio": 24.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 22.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 65140498.47,
+            "projetos": 9,
+            "prazo_medio_meses": 24.2
+          },
+          {
+            "ano": 2019,
+            "valor": 133179709.06,
+            "projetos": 23,
+            "prazo_medio_meses": 22.0
+          },
+          {
+            "ano": 2020,
+            "valor": 8907450.25,
+            "projetos": 2,
+            "prazo_medio_meses": 21.0
+          },
+          {
+            "ano": 2021,
+            "valor": 44281745.54,
+            "projetos": 7,
+            "prazo_medio_meses": 21.4
+          },
+          {
+            "ano": 2022,
+            "valor": 158449780.55,
+            "projetos": 15,
+            "prazo_medio_meses": 24.1
+          },
+          {
+            "ano": 2023,
+            "valor": 108995746.24000001,
+            "projetos": 11,
+            "prazo_medio_meses": 21.3
+          },
+          {
+            "ano": 2024,
+            "valor": 83701033.42,
+            "projetos": 7,
+            "prazo_medio_meses": 23.9
+          },
+          {
+            "ano": 2025,
+            "valor": 42218723.5,
+            "projetos": 3,
+            "prazo_medio_meses": 20.0
+          },
+          {
+            "ano": 2026,
+            "valor": 8126880.48,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "EXXONMOBIL",
+        "prazo_medio_geral": 33.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 12,
+        "projetos_em_andamento": 39,
+        "projetos_indefinidos": 0,
+        "total_projetos": 51,
+        "pct_andamento": 76.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "ESTUDO DE BACIAS COM AQUISIÇÃO DE DADOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 45.6
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 42.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 38.6
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 28.3
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 1561802.88,
+            "projetos": 1,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2022,
+            "valor": 17436909.58,
+            "projetos": 4,
+            "prazo_medio_meses": 30.0
+          },
+          {
+            "ano": 2023,
+            "valor": 108177527.8,
+            "projetos": 15,
+            "prazo_medio_meses": 40.4
+          },
+          {
+            "ano": 2024,
+            "valor": 122876070.06,
+            "projetos": 17,
+            "prazo_medio_meses": 28.6
+          },
+          {
+            "ano": 2025,
+            "valor": 101167741.04,
+            "projetos": 13,
+            "prazo_medio_meses": 34.3
+          },
+          {
+            "ano": 2026,
+            "valor": 4711561.97,
+            "projetos": 1,
+            "prazo_medio_meses": 18.0
+          }
+        ]
+      },
+      {
+        "operadora": "PETRONAS",
+        "prazo_medio_geral": 35.8,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 13,
+        "projetos_em_andamento": 31,
+        "projetos_indefinidos": 0,
+        "total_projetos": 44,
+        "pct_andamento": 70.5,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "ESTUDO DE BACIAS COM AQUISIÇÃO DE DADOS",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 48.0
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 44.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.5
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2021,
+            "valor": 54612012.69,
+            "projetos": 7,
+            "prazo_medio_meses": 41.1
+          },
+          {
+            "ano": 2022,
+            "valor": 41764891.63,
+            "projetos": 7,
+            "prazo_medio_meses": 38.6
+          },
+          {
+            "ano": 2023,
+            "valor": 185797378.33,
+            "projetos": 14,
+            "prazo_medio_meses": 39.1
+          },
+          {
+            "ano": 2025,
+            "valor": 73084864.12,
+            "projetos": 16,
+            "prazo_medio_meses": 29.2
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR ENERGY",
+        "prazo_medio_geral": 34.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 24,
+        "projetos_em_andamento": 18,
+        "projetos_indefinidos": 0,
+        "total_projetos": 42,
+        "pct_andamento": 42.9,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.4
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 27.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2020,
+            "valor": 28954097.41,
+            "projetos": 10,
+            "prazo_medio_meses": 25.4
+          },
+          {
+            "ano": 2021,
+            "valor": 31142361.4,
+            "projetos": 5,
+            "prazo_medio_meses": 27.6
+          },
+          {
+            "ano": 2022,
+            "valor": 90247577.94,
+            "projetos": 12,
+            "prazo_medio_meses": 38.0
+          },
+          {
+            "ano": 2023,
+            "valor": 109559512.74,
+            "projetos": 10,
+            "prazo_medio_meses": 45.6
+          },
+          {
+            "ano": 2024,
+            "valor": 5949404.58,
+            "projetos": 2,
+            "prazo_medio_meses": 21.0
+          },
+          {
+            "ano": 2025,
+            "valor": 28436678.02,
+            "projetos": 3,
+            "prazo_medio_meses": 36.0
+          }
+        ]
+      },
+      {
+        "operadora": "EQUINOR BRASIL",
+        "prazo_medio_geral": 29.4,
+        "prazo_mediano": 24.0,
+        "projetos_concluidos": 27,
+        "projetos_em_andamento": 16,
+        "projetos_indefinidos": 0,
+        "total_projetos": 43,
+        "pct_andamento": 37.2,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 33.2
+          },
+          {
+            "qualificacao": "DESENVOLVIMENTO EXPERIMENTAL",
+            "prazo_medio": 28.8
+          },
+          {
+            "qualificacao": "PESQUISA BÁSICA",
+            "prazo_medio": 28.0
+          },
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 26.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 20.3
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2018,
+            "valor": 23152970.2,
+            "projetos": 11,
+            "prazo_medio_meses": 23.8
+          },
+          {
+            "ano": 2019,
+            "valor": 41242707.01,
+            "projetos": 11,
+            "prazo_medio_meses": 30.2
+          },
+          {
+            "ano": 2020,
+            "valor": 25872662.240000002,
+            "projetos": 4,
+            "prazo_medio_meses": 33.0
+          },
+          {
+            "ano": 2023,
+            "valor": 12518413.4,
+            "projetos": 1,
+            "prazo_medio_meses": 24.0
+          },
+          {
+            "ano": 2024,
+            "valor": 86862965.63,
+            "projetos": 7,
+            "prazo_medio_meses": 34.0
+          },
+          {
+            "ano": 2025,
+            "valor": 102820215.05,
+            "projetos": 9,
+            "prazo_medio_meses": 30.7
+          }
+        ]
+      },
+      {
+        "operadora": "CNODC",
+        "prazo_medio_geral": 33.6,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 4,
+        "projetos_em_andamento": 6,
+        "projetos_indefinidos": 0,
+        "total_projetos": 10,
+        "pct_andamento": 60.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 36.8
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 21.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2022,
+            "valor": 16363424.780000001,
+            "projetos": 2,
+            "prazo_medio_meses": 42.0
+          },
+          {
+            "ano": 2023,
+            "valor": 42143800.32,
+            "projetos": 6,
+            "prazo_medio_meses": 32.0
+          },
+          {
+            "ano": 2024,
+            "valor": 97976802.55,
+            "projetos": 2,
+            "prazo_medio_meses": 30.0
+          }
+        ]
+      },
+      {
+        "operadora": "CNOOC",
+        "prazo_medio_geral": 35.0,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 6,
+        "projetos_em_andamento": 13,
+        "projetos_indefinidos": 0,
+        "total_projetos": 19,
+        "pct_andamento": 68.4,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.7
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 23.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2022,
+            "valor": 4258555.0,
+            "projetos": 1,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2023,
+            "valor": 32007717.87,
+            "projetos": 7,
+            "prazo_medio_meses": 29.1
+          },
+          {
+            "ano": 2024,
+            "valor": 28941018.34,
+            "projetos": 4,
+            "prazo_medio_meses": 32.8
+          },
+          {
+            "ano": 2025,
+            "valor": 78341325.64,
+            "projetos": 7,
+            "prazo_medio_meses": 42.0
+          }
+        ]
+      },
+      {
+        "operadora": "QATAR ENERGY",
+        "prazo_medio_geral": 34.1,
+        "prazo_mediano": 36.0,
+        "projetos_concluidos": 0,
+        "projetos_em_andamento": 8,
+        "projetos_indefinidos": 0,
+        "total_projetos": 8,
+        "pct_andamento": 100.0,
+        "prazo_por_qualificacao": [
+          {
+            "qualificacao": "PROTÓTIPO OU UNIDADE PILOTO",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA EM MEIO AMBIENTE",
+            "prazo_medio": 36.0
+          },
+          {
+            "qualificacao": "PESQUISA APLICADA",
+            "prazo_medio": 35.0
+          },
+          {
+            "qualificacao": "INFRAESTRUTURA",
+            "prazo_medio": 24.0
+          }
+        ],
+        "volume_por_ano": [
+          {
+            "ano": 2023,
+            "valor": 10108446.49,
+            "projetos": 1,
+            "prazo_medio_meses": 33.0
+          },
+          {
+            "ano": 2024,
+            "valor": 78851617.33,
+            "projetos": 4,
+            "prazo_medio_meses": 36.0
+          },
+          {
+            "ano": 2025,
+            "valor": 18927415.44,
+            "projetos": 3,
+            "prazo_medio_meses": 32.0
+          }
+        ]
+      }
+    ]
   },
   "verticais_meta": {
     "Manufatura Avançada": {
