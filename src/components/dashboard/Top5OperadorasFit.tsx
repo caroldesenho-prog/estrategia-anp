@@ -222,58 +222,109 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
   );
 };
 
+const RED_BG = "#FCEBEB";
+const RED_FG = "#A32D2D";
+
 const CompetenciaBlock = ({
   title,
   block,
   accent,
+  projetosPorSubtema,
   onSubtemaClick,
 }: {
   title: string;
   block: FitVerticalBlock;
   accent: string;
+  projetosPorSubtema?: Record<string, ProjetoAnp[]>;
   onSubtemaClick: (subtema: string) => void;
-}) => (
-  <div className="rounded-md border border-border bg-card p-4">
-    <div className="mb-3 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <span className="h-2.5 w-2.5 rounded-full" style={{ background: accent }} />
-        <h4 className="text-sm font-semibold text-foreground">{title}</h4>
+}) => {
+  const subtemaStats = (subtema: string) => {
+    const projs = projetosPorSubtema?.[subtema] ?? [];
+    const semIct = projs.filter((p) => !p.tem_ict);
+    const valor = semIct.reduce((acc, p) => acc + (p.valor || 0), 0);
+    return { count: semIct.length, valor };
+  };
+
+  return (
+    <div className="rounded-md border border-border bg-card p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full" style={{ background: accent }} />
+          <h4 className="text-sm font-semibold text-foreground">{title}</h4>
+        </div>
+        <span className="text-xs tabular-nums text-muted-foreground">
+          {formatBRL(block.valor_total)} endereçável
+        </span>
       </div>
-      <span className="text-xs tabular-nums text-muted-foreground">
-        {formatBRL(block.valor_total)} endereçável
-      </span>
+      {block.labs.length === 0 ? (
+        <p className="py-4 text-center text-xs text-muted-foreground">Sem laboratórios com fit.</p>
+      ) : (
+        <ul className="space-y-3">
+          {block.labs.map((lab) => {
+            const labGap = lab.subtemas_match.reduce((acc, s) => acc + subtemaStats(s).count, 0);
+            return (
+              <li key={lab.lab} className="rounded-md border border-border/70 bg-background/50 p-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-foreground">{lab.lab}</span>
+                    {labGap > 0 && (
+                      <span
+                        className="inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-semibold tabular-nums"
+                        style={{ backgroundColor: RED_BG, color: RED_FG }}
+                      >
+                        {formatNumber(labGap)} sem ICT
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-xs tabular-nums text-muted-foreground">
+                    {formatBRL(lab.valor)} · {formatNumber(lab.projetos)} projetos
+                  </span>
+                </div>
+                {lab.subtemas_match.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {lab.subtemas_match.map((s) => {
+                      const { count, valor } = subtemaStats(s);
+                      const hasGap = count > 0;
+                      const tooltip = hasGap
+                        ? `${count} projeto${count === 1 ? "" : "s"} sem ICT — ${formatBRL(valor)} disponível`
+                        : undefined;
+                      return (
+                        <button
+                          key={s}
+                          onClick={() => onSubtemaClick(s)}
+                          title={tooltip}
+                          className={
+                            "inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5 text-[10px] font-medium transition-colors " +
+                            (hasGap
+                              ? "border bg-muted text-foreground hover:bg-primary hover:text-primary-foreground"
+                              : "bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground")
+                          }
+                          style={
+                            hasGap
+                              ? { borderColor: RED_FG + "55", backgroundColor: RED_BG, color: RED_FG }
+                              : undefined
+                          }
+                        >
+                          {hasGap && (
+                            <span
+                              className="h-1.5 w-1.5 rounded-full"
+                              style={{ backgroundColor: RED_FG }}
+                            />
+                          )}
+                          {s}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
-    {block.labs.length === 0 ? (
-      <p className="py-4 text-center text-xs text-muted-foreground">Sem laboratórios com fit.</p>
-    ) : (
-      <ul className="space-y-3">
-        {block.labs.map((lab) => (
-          <li key={lab.lab} className="rounded-md border border-border/70 bg-background/50 p-3">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <span className="text-sm font-semibold text-foreground">{lab.lab}</span>
-              <span className="text-xs tabular-nums text-muted-foreground">
-                {formatBRL(lab.valor)} · {formatNumber(lab.projetos)} projetos
-              </span>
-            </div>
-            {lab.subtemas_match.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {lab.subtemas_match.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => onSubtemaClick(s)}
-                    className="rounded-sm bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-  </div>
-);
+  );
+};
 
 const ProjetoCard = ({ projeto }: { projeto: ProjetoAnp }) => (
   <div className="rounded-lg border border-border bg-card p-4">
