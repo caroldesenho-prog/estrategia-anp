@@ -17,9 +17,10 @@ interface DrawerState {
   projetos: ProjetoAnp[];
 }
 
-export const Top5OperadorasFit = ({ data }: Props) => {
+export const Top5OperadorasFit = ({ data, vertical }: Props) => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
+  const isDigital = vertical === "Tecnologias Digitais Avançadas";
 
   const openDrawer = (op: OperadoraFit, subtema: string) => {
     const projetos = op.projetos_por_subtema?.[subtema] ?? [];
