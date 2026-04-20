@@ -110,6 +110,9 @@ const Index = () => {
                 ))}
               </div>
               <ObrigacaoExecucaoChart data={periodData.obrigacao_vs_execucao} />
+              <div className="mt-6">
+                <TempoExecucaoChart data={periodData.tempo_execucao_operadoras} />
+              </div>
             </SectionCard>
           </>
         ) : (
