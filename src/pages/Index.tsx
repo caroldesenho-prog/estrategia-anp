@@ -149,9 +149,6 @@ const Index = () => {
               <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />
             </SectionCard>
 
-            <SectionCard title="2 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
-              <VerticalCrescimento data={verticalData.crescimento_subtemas} />
-            </SectionCard>
 
             <SectionCard title="3 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
               <VerticalTemas
