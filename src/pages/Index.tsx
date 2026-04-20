@@ -133,7 +133,7 @@ const Index = () => {
               title="Top 5 operadoras — oportunidade por vertical"
               subtitle="Expanda uma linha para ver temas investigados, competências aplicáveis e parceiros potenciais"
             >
-              <Top5OperadorasFit data={periodData.top5_operadoras_fit} />
+              <Top5OperadorasFit data={periodData.top5_operadoras_fit} vertical={vertical} />
             </SectionCard>
 
             <SectionCard title="1 · Top 10 subtemas ANP com fit" subtitle="Ordenado por volume com indicador de % sem ICT">

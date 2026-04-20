@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { OperadoraFit, FitVerticalBlock, ProjetoAnp } from "@/types/dashboard";
+import { OperadoraFit, FitVerticalBlock, ProjetoAnp, Vertical } from "@/types/dashboard";
 import { formatBRL, formatNumber } from "@/lib/format";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 
 interface Props {
   data: OperadoraFit[];
+  vertical: Vertical;
 }
 
 interface DrawerState {
@@ -16,9 +17,10 @@ interface DrawerState {
   projetos: ProjetoAnp[];
 }
 
-export const Top5OperadorasFit = ({ data }: Props) => {
+export const Top5OperadorasFit = ({ data, vertical }: Props) => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
+  const isDigital = vertical === "Tecnologias Digitais Avançadas";
 
   const openDrawer = (op: OperadoraFit, subtema: string) => {
     const projetos = op.projetos_por_subtema?.[subtema] ?? [];
@@ -93,19 +95,22 @@ export const Top5OperadorasFit = ({ data }: Props) => {
 
                     {/* Tab 2 */}
                     <TabsContent value="competencias" className="mt-0">
-                      <div className="grid gap-4 lg:grid-cols-2">
-                        <CompetenciaBlock
-                          title="Manufatura Avançada"
-                          block={op.fit_manufatura}
-                          accent="hsl(var(--primary))"
-                          onSubtemaClick={(s) => openDrawer(op, s)}
-                        />
-                        <CompetenciaBlock
-                          title="Tecnologias Digitais"
-                          block={op.fit_digital}
-                          accent="hsl(var(--accent))"
-                          onSubtemaClick={(s) => openDrawer(op, s)}
-                        />
+                      <div className="grid gap-4">
+                        {isDigital ? (
+                          <CompetenciaBlock
+                            title="Tecnologias Digitais Avançadas"
+                            block={op.fit_digital}
+                            accent="hsl(var(--accent))"
+                            onSubtemaClick={(s) => openDrawer(op, s)}
+                          />
+                        ) : (
+                          <CompetenciaBlock
+                            title="Manufatura Avançada"
+                            block={op.fit_manufatura}
+                            accent="hsl(var(--primary))"
+                            onSubtemaClick={(s) => openDrawer(op, s)}
+                          />
+                        )}
                       </div>
                     </TabsContent>
 
