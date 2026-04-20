@@ -12,7 +12,7 @@ import { IctsPreferidasTable } from "@/components/dashboard/IctsPreferidasTable"
 import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucaoChart";
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
-import { VerticalLabs } from "@/components/dashboard/VerticalLabs";
+
 import { VerticalGap } from "@/components/dashboard/VerticalGap";
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
@@ -140,19 +140,15 @@ const Index = () => {
               <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />
             </SectionCard>
 
-            <SectionCard title="2 · Fit por laboratório" subtitle={`Laboratórios da vertical ${vertical} e subtemas ANP mapeados`}>
-              <VerticalLabs data={verticalData.fit_por_lab} cor={cor} />
-            </SectionCard>
-
-            <SectionCard title="3 · Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
+            <SectionCard title="2 · Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
               <VerticalGap data={verticalData.gap_por_operadora} />
             </SectionCard>
 
-            <SectionCard title="4 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
+            <SectionCard title="3 · Subtemas em crescimento" subtitle="Top 10 subtemas com fit comparados ao período anterior">
               <VerticalCrescimento data={verticalData.crescimento_subtemas} />
             </SectionCard>
 
-            <SectionCard title="5 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
+            <SectionCard title="4 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
               <VerticalTemas
                 data={verticalData.temas_com_fit}
                 cor={cor}
