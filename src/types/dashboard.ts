@@ -147,6 +147,18 @@ export interface PeriodData {
   temas_tree: TemaTree[];
   top5_operadoras_fit: OperadoraFit[];
   por_vertical: Record<Vertical, VerticalData>;
+  tempo_execucao_operadoras: TempoExecucaoOperadora[];
+}
+
+export interface TempoExecucaoOperadora {
+  operadora: string;
+  prazo_medio_geral: number;
+  prazo_mediano: number;
+  projetos_concluidos: number;
+  projetos_em_andamento: number;
+  projetos_indefinidos: number;
+  total_projetos: number;
+  pct_andamento: number;
 }
 
 export interface VerticalMeta { cor: string; labs: string[]; }
