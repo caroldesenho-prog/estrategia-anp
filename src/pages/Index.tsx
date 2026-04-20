@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import dashboardJson from "@/data/dashboard_data_v2.json";
+import dashboardJson from "@/data/dashboard_data_v3.json";
 import { DashboardData, Period, Vertical, View } from "@/types/dashboard";
 import { Header } from "@/components/dashboard/Header";
 import { KpiCards } from "@/components/dashboard/KpiCards";
@@ -16,6 +16,7 @@ import { VerticalLabs } from "@/components/dashboard/VerticalLabs";
 import { VerticalGap } from "@/components/dashboard/VerticalGap";
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
+import { Top5OperadorasFit } from "@/components/dashboard/Top5OperadorasFit";
 import { formatBRL, formatNumber, formatPct } from "@/lib/format";
 import { Briefcase, Wallet, CheckCircle2, AlertCircle, Target, TrendingUp, AlertTriangle, Coins } from "lucide-react";
 
@@ -81,7 +82,7 @@ const Index = () => {
             </SectionCard>
 
             <SectionCard title="4 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
-              <ParceirosTable data={periodData.parceiros} />
+              <ParceirosTable data={periodData.parceiros_geral} />
             </SectionCard>
 
             <SectionCard title="5 · Concorrentes ICTs" subtitle="Posicionamento de ICTs e concentração por operadora">
@@ -127,6 +128,13 @@ const Index = () => {
                 },
               ]}
             />
+
+            <SectionCard
+              title="Top 5 operadoras — oportunidade por vertical"
+              subtitle="Expanda uma linha para ver temas investigados, competências aplicáveis e parceiros potenciais"
+            >
+              <Top5OperadorasFit data={periodData.top5_operadoras_fit} />
+            </SectionCard>
 
             <SectionCard title="1 · Top 10 subtemas ANP com fit" subtitle="Ordenado por volume com indicador de % sem ICT">
               <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />

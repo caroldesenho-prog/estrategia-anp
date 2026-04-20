@@ -87,17 +87,52 @@ export interface VerticalData {
   temas_com_fit: TemaComFit[];
 }
 
+export interface TemaInvestigado { tema: string; valor: number; projetos: number; }
+export interface SubtemaInvestigado { subtema: string; valor: number; projetos: number; }
+export interface FitLab {
+  lab: string;
+  projetos: number;
+  valor: number;
+  sem_ict: number;
+  subtemas_match: string[];
+}
+export interface FitVerticalBlock {
+  subtemas: SubtemaFit[];
+  labs: FitLab[];
+  valor_total: number;
+  gap_sem_ict: number;
+}
+export interface ParceiroPotencial {
+  empresa: string;
+  projetos: number;
+  valor: number;
+  ja_tem_ict: boolean;
+  tipo: string;
+  subtemas: string[];
+}
+export interface OperadoraFit {
+  operadora: string;
+  volume_total: number;
+  projetos_total: number;
+  temas_investigados: TemaInvestigado[];
+  subtemas_investigados: SubtemaInvestigado[];
+  fit_manufatura: FitVerticalBlock;
+  fit_digital: FitVerticalBlock;
+  parceiros_potenciais: ParceiroPotencial[];
+}
+
 export interface PeriodData {
   periodo: string;
   resumo_geral: ResumoGeral;
   top15_operadoras: OperadoraRow[];
   taxa_ict_operadora: TaxaIctRow[];
   ict_por_operadora: IctPorOperadora[];
-  parceiros: ParceiroRow[];
+  parceiros_geral: ParceiroRow[];
   concorrentes: ConcorrenteRow[];
   heatmap_ict_op: HeatmapData;
   obrigacao_vs_execucao: ObrigacaoExecucao[];
   temas_tree: TemaTree[];
+  top5_operadoras_fit: OperadoraFit[];
   por_vertical: Record<Vertical, VerticalData>;
 }
 
