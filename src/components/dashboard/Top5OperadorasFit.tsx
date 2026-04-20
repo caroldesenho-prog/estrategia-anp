@@ -95,19 +95,22 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
 
                     {/* Tab 2 */}
                     <TabsContent value="competencias" className="mt-0">
-                      <div className="grid gap-4 lg:grid-cols-2">
-                        <CompetenciaBlock
-                          title="Manufatura Avançada"
-                          block={op.fit_manufatura}
-                          accent="hsl(var(--primary))"
-                          onSubtemaClick={(s) => openDrawer(op, s)}
-                        />
-                        <CompetenciaBlock
-                          title="Tecnologias Digitais"
-                          block={op.fit_digital}
-                          accent="hsl(var(--accent))"
-                          onSubtemaClick={(s) => openDrawer(op, s)}
-                        />
+                      <div className="grid gap-4">
+                        {isDigital ? (
+                          <CompetenciaBlock
+                            title="Tecnologias Digitais Avançadas"
+                            block={op.fit_digital}
+                            accent="hsl(var(--accent))"
+                            onSubtemaClick={(s) => openDrawer(op, s)}
+                          />
+                        ) : (
+                          <CompetenciaBlock
+                            title="Manufatura Avançada"
+                            block={op.fit_manufatura}
+                            accent="hsl(var(--primary))"
+                            onSubtemaClick={(s) => openDrawer(op, s)}
+                          />
+                        )}
                       </div>
                     </TabsContent>
 
