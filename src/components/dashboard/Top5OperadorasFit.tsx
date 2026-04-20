@@ -195,6 +195,18 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
           )}{" "}
           projetos
         </span>
+        <span className="text-muted-foreground">·</span>
+        <span className="text-sm font-semibold tabular-nums text-muted-foreground">
+          {formatBRL(
+            data.reduce((acc, op) => {
+              const b = isDigital ? op.fit_digital : op.fit_manufatura;
+              return (
+                acc +
+                b.subtemas.filter((s) => s.sem_ict > 0).reduce((a, s) => a + (s.valor || 0), 0)
+              );
+            }, 0),
+          )}
+        </span>
       </div>
 
       <Sheet open={!!drawer} onOpenChange={(o) => !o && setDrawer(null)}>
