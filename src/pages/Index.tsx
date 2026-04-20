@@ -151,6 +151,10 @@ const Index = () => {
               ]}
             />
 
+            <SectionCard title="Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
+              <VerticalGap data={verticalData.gap_por_operadora} />
+            </SectionCard>
+
             <SectionCard
               title="Top 5 operadoras — oportunidade por vertical"
               subtitle="Expanda uma linha para ver temas investigados, competências aplicáveis e parceiros potenciais"
