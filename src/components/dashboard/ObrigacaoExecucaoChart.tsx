@@ -20,7 +20,7 @@ const Tip = ({ active, payload, label }: any) => {
 };
 
 export const ObrigacaoExecucaoChart = ({ data }: Props) => {
-  const sorted = [...data].sort((a, b) => b.obrigacao_total - a.obrigacao_total);
+  const sorted = [...data].sort((a: any, b: any) => (b.obrigacao ?? b.obrigacao_total ?? 0) - (a.obrigacao ?? a.obrigacao_total ?? 0));
   return (
     <div style={{ width: "100%", height: Math.max(360, sorted.length * 36) }}>
       <ResponsiveContainer>
@@ -30,7 +30,7 @@ export const ObrigacaoExecucaoChart = ({ data }: Props) => {
           <YAxis type="category" dataKey="operadora" stroke="hsl(var(--muted-foreground))" fontSize={11} width={130} />
           <Tooltip content={<Tip />} cursor={{ fill: "hsl(var(--muted))" }} />
           <Legend wrapperStyle={{ fontSize: 12 }} />
-          <Bar dataKey="obrigacao_total" name="Obrigação" fill="#1F4E79" radius={[0, 3, 3, 0]} />
+          <Bar dataKey="obrigacao" name="Obrigação" fill="#1F4E79" radius={[0, 3, 3, 0]} />
           <Bar dataKey="executado_total" name="Executado" fill="#1D9E75" radius={[0, 3, 3, 0]} />
         </BarChart>
       </ResponsiveContainer>
