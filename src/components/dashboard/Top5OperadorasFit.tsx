@@ -111,6 +111,7 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
                             title="Tecnologias Digitais Avançadas"
                             block={op.fit_digital}
                             accent="hsl(var(--accent))"
+                            projetosPorSubtema={op.projetos_por_subtema}
                             onSubtemaClick={(s) => openDrawer(op, s)}
                           />
                         ) : (
@@ -118,6 +119,7 @@ export const Top5OperadorasFit = ({ data, vertical }: Props) => {
                             title="Manufatura Avançada"
                             block={op.fit_manufatura}
                             accent="hsl(var(--primary))"
+                            projetosPorSubtema={op.projetos_por_subtema}
                             onSubtemaClick={(s) => openDrawer(op, s)}
                           />
                         )}
