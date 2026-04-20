@@ -10,7 +10,7 @@ import { ConcorrentesIcts } from "@/components/dashboard/ConcorrentesIcts";
 import { TaxaIctChart } from "@/components/dashboard/TaxaIctChart";
 import { IctsPreferidasTable } from "@/components/dashboard/IctsPreferidasTable";
 import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucaoChart";
-import { TempoExecucaoChart } from "@/components/dashboard/TempoExecucaoChart";
+
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
 import { VerticalGap } from "@/components/dashboard/VerticalGap";
@@ -111,9 +111,6 @@ const Index = () => {
                 ))}
               </div>
               <ObrigacaoExecucaoChart data={periodData.obrigacao_vs_execucao} />
-              <div className="mt-6">
-                <TempoExecucaoChart data={periodData.tempo_execucao_operadoras} />
-              </div>
             </SectionCard>
           </>
         ) : (
