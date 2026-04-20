@@ -10,6 +10,7 @@ import { ConcorrentesIcts } from "@/components/dashboard/ConcorrentesIcts";
 import { TaxaIctChart } from "@/components/dashboard/TaxaIctChart";
 import { IctsPreferidasTable } from "@/components/dashboard/IctsPreferidasTable";
 import { ObrigacaoExecucaoChart } from "@/components/dashboard/ObrigacaoExecucaoChart";
+import { TempoExecucaoChart } from "@/components/dashboard/TempoExecucaoChart";
 import { VerticalSelector } from "@/components/dashboard/VerticalSelector";
 import { VerticalSubtemas } from "@/components/dashboard/VerticalSubtemas";
 
