@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import dashboardJson from "@/data/dashboard_data_v3.json";
+import dashboardJson from "@/data/dashboard_data_v7.json";
 import { DashboardData, Period, Vertical, View } from "@/types/dashboard";
 import { Header } from "@/components/dashboard/Header";
 import { KpiCards } from "@/components/dashboard/KpiCards";
