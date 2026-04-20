@@ -140,10 +140,6 @@ const Index = () => {
               <VerticalSubtemas data={verticalData.top10_subtemas} cor={cor} />
             </SectionCard>
 
-            <SectionCard title="2 · Fit por laboratório" subtitle={`Laboratórios da vertical ${vertical} e subtemas ANP mapeados`}>
-              <VerticalLabs data={verticalData.fit_por_lab} cor={cor} />
-            </SectionCard>
-
             <SectionCard title="3 · Gap por operadora" subtitle="Projetos sem ICT alocada — ordenado por valor do gap">
               <VerticalGap data={verticalData.gap_por_operadora} />
             </SectionCard>
