@@ -33,7 +33,16 @@ export interface IctPorOperadora {
 export interface ParceiroRow { empresa: string; projetos: number; valor: number; operadoras: string[]; }
 export interface ConcorrenteRow { ict: string; projetos: number; valor: number; num_operadoras: number; }
 export interface HeatmapData { icts: string[]; operadoras: string[]; dados: Array<Record<string, string | number>>; }
-export interface ObrigacaoExecucao { operadora: string; obrigacao: number; executado: number; gap: number; }
+export interface ObrigacaoAno { ano: number; valor: number; }
+export interface ObrigacaoExecucao {
+  operadora: string;
+  obrigacao_total: number;
+  executado_total: number;
+  gap: number;
+  saldo_pct: number;
+  obrigacao_por_ano: ObrigacaoAno[];
+  execucao_por_ano: ObrigacaoAno[];
+}
 
 export interface SubtemaTree { subtema: string; projetos: number; valor: number; sem_ict: number; }
 export interface TemaTree {
