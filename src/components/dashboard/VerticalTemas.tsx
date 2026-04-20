@@ -3,9 +3,9 @@ import { formatBRL, formatNumber } from "@/lib/format";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
 
-interface Props { data: TemaComFit[]; cor: string; fitSubtemas?: Set<string>; }
+interface Props { data: TemaComFit[]; cor: string; fitSubtemas: Set<string>; }
 
-export const VerticalTemas = ({ data, cor }: Props) => {
+export const VerticalTemas = ({ data, cor, fitSubtemas }: Props) => {
   const sorted = [...data].sort((a, b) => b.fit_valor - a.fit_valor);
   return (
     <Accordion type="multiple" className="space-y-2">
@@ -25,7 +25,7 @@ export const VerticalTemas = ({ data, cor }: Props) => {
           <AccordionContent className="border-t border-border px-4 py-3">
             <ul className="space-y-1.5">
               {tema.subtemas.map((s) => {
-                const hasFit = (s as any).fit ?? false;
+                const hasFit = fitSubtemas.has(s.subtema);
                 return (
                   <li key={s.subtema} className="flex items-center justify-between gap-3 text-xs">
                     <div className="flex min-w-0 items-center gap-2">

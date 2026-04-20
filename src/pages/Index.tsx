@@ -145,7 +145,11 @@ const Index = () => {
             </SectionCard>
 
             <SectionCard title="5 · Temas ANP com fit" subtitle="Clique para expandir e ver os subtemas — ✓ indica fit com a vertical">
-              <VerticalTemas data={verticalData.temas_com_fit} cor={cor} />
+              <VerticalTemas
+                data={verticalData.temas_com_fit}
+                cor={cor}
+                fitSubtemas={new Set(verticalData.top10_subtemas.map((s) => s.subtema))}
+              />
             </SectionCard>
           </>
         )}
