@@ -9,9 +9,6 @@ interface Props {
 const ORDER: Vertical[] = [
   "Manufatura Avançada",
   "Tecnologias Digitais Avançadas",
-  "Energias Renováveis",
-  "Materiais Avançados",
-  "Biotecnologia",
 ];
 
 export const VerticalSelector = ({ meta, selected, onChange }: Props) => {
