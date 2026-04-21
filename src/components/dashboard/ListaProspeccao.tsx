@@ -102,6 +102,42 @@ export const ListaProspeccao = ({ data }: Props) => {
         operadora-alvo, líder responsável e tipo de produto a ofertar.
       </p>
 
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tipo de produto:</span>
+        <button
+          type="button"
+          onClick={() => {
+            setTipoFiltro([]);
+            setPage1(0);
+            setPage2(0);
+          }}
+          className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+            tipoFiltro.length === 0
+              ? "border-primary bg-primary text-primary-foreground"
+              : "border-border bg-card text-muted-foreground hover:bg-muted"
+          }`}
+        >
+          Todos
+        </button>
+        {tiposDisponiveis.map((t) => {
+          const active = tipoFiltro.includes(t);
+          return (
+            <button
+              key={t}
+              type="button"
+              onClick={() => toggleTipo(t)}
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                active
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              {t}
+            </button>
+          );
+        })}
+      </div>
+
       <KpiCards
         items={[
           { label: "Total de oportunidades", value: formatNumber(stats.total), icon: Briefcase },
