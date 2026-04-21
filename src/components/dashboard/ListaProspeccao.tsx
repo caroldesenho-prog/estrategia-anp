@@ -88,7 +88,7 @@ export const ListaProspeccao = ({ data }: Props) => {
       e1List: [...e1].sort((a, b) => b.valor - a.valor),
       e2List: [...e2].sort((a, b) => b.valor - a.valor),
     };
-  }, [data]);
+  }, [filtered]);
 
   const e1Pages = Math.max(1, Math.ceil(stats.e1List.length / PAGE_SIZE));
   const e2Pages = Math.max(1, Math.ceil(stats.e2List.length / PAGE_SIZE));
