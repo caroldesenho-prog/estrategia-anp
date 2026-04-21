@@ -48,8 +48,26 @@ interface Props {
 export const ListaProspeccao = ({ data }: Props) => {
   const [page1, setPage1] = useState(0);
   const [page2, setPage2] = useState(0);
+  const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
+
+  const tiposDisponiveis = useMemo(() => {
+    const set = new Set(data.map((x) => x.tipo_produto).filter(Boolean));
+    return Array.from(set).sort();
+  }, [data]);
+
+  const filtered = useMemo(() => {
+    if (tipoFiltro.length === 0) return data;
+    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
+  }, [data, tipoFiltro]);
+
+  const toggleTipo = (t: string) => {
+    setPage1(0);
+    setPage2(0);
+    setTipoFiltro((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
+  };
 
   const stats = useMemo(() => {
+    const data = filtered;
     const total = data.length;
     const valor = data.reduce((s, x) => s + (x.valor || 0), 0);
     const e1 = data.filter((x) => x.estrategia === 1);
@@ -70,7 +88,7 @@ export const ListaProspeccao = ({ data }: Props) => {
       e1List: [...e1].sort((a, b) => b.valor - a.valor),
       e2List: [...e2].sort((a, b) => b.valor - a.valor),
     };
-  }, [data]);
+  }, [filtered]);
 
   const e1Pages = Math.max(1, Math.ceil(stats.e1List.length / PAGE_SIZE));
   const e2Pages = Math.max(1, Math.ceil(stats.e2List.length / PAGE_SIZE));
@@ -83,6 +101,42 @@ export const ListaProspeccao = ({ data }: Props) => {
         Oportunidades concretas mapeadas para a vertical, segmentadas por estratégia de aproximação. Cada item indica
         operadora-alvo, líder responsável e tipo de produto a ofertar.
       </p>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tipo de produto:</span>
+        <button
+          type="button"
+          onClick={() => {
+            setTipoFiltro([]);
+            setPage1(0);
+            setPage2(0);
+          }}
+          className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+            tipoFiltro.length === 0
+              ? "border-primary bg-primary text-primary-foreground"
+              : "border-border bg-card text-muted-foreground hover:bg-muted"
+          }`}
+        >
+          Todos
+        </button>
+        {tiposDisponiveis.map((t) => {
+          const active = tipoFiltro.includes(t);
+          return (
+            <button
+              key={t}
+              type="button"
+              onClick={() => toggleTipo(t)}
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                active
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              {t}
+            </button>
+          );
+        })}
+      </div>
 
       <KpiCards
         items={[
