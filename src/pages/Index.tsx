@@ -69,15 +69,8 @@ const Index = () => {
               ]}
             />
 
-            <SectionCard title="1 · Onde o dinheiro está" subtitle="Top 15 operadoras por volume investido em PD&I">
+            <SectionCard title="1 · Obrigação de Investimentos ANP" subtitle="Top 15 operadoras por volume investido em PD&I">
               <OperadorasChart data={periodData.top15_operadoras} />
-            </SectionCard>
-
-            <SectionCard title="2 · Obrigação vs Execução" subtitle="Comparativo entre obrigação total e valor executado por operadora">
-              <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
-                Obrigação = valor gerado pela cláusula PD&amp;I no período selecionado. Execução = valor dos projetos iniciados no mesmo período. Execução pode superar a obrigação porque projetos aprovados em anos anteriores continuam sendo desembolsados — os valores refletem o momento de início do projeto, não o desembolso anual.
-              </p>
-              <ObrigacaoExecucaoChart data={periodData.obrigacao_vs_execucao} />
             </SectionCard>
 
             <SectionCard
@@ -85,10 +78,6 @@ const Index = () => {
               subtitle="Composição dos projetos: com ICT, com empresa BR sem ICT, sem nenhum"
             >
               <TaxaIctChart data={periodData.taxa_ict_operadora} />
-            </SectionCard>
-
-            <SectionCard title="4 · ICTs preferidas por operadora" subtitle="Top 3 ICTs mais contratadas por operadora">
-              <IctsPreferidasTable data={periodData.ict_por_operadora} />
             </SectionCard>
 
             <SectionCard title="5 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
