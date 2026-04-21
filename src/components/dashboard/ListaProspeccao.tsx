@@ -48,8 +48,26 @@ interface Props {
 export const ListaProspeccao = ({ data }: Props) => {
   const [page1, setPage1] = useState(0);
   const [page2, setPage2] = useState(0);
+  const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
+
+  const tiposDisponiveis = useMemo(() => {
+    const set = new Set(data.map((x) => x.tipo_produto).filter(Boolean));
+    return Array.from(set).sort();
+  }, [data]);
+
+  const filtered = useMemo(() => {
+    if (tipoFiltro.length === 0) return data;
+    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
+  }, [data, tipoFiltro]);
+
+  const toggleTipo = (t: string) => {
+    setPage1(0);
+    setPage2(0);
+    setTipoFiltro((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
+  };
 
   const stats = useMemo(() => {
+    const data = filtered;
     const total = data.length;
     const valor = data.reduce((s, x) => s + (x.valor || 0), 0);
     const e1 = data.filter((x) => x.estrategia === 1);
