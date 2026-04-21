@@ -41,7 +41,7 @@ const Index = () => {
       <main className="mx-auto max-w-[1440px] space-y-6 px-6 py-6">
         <p className="text-sm text-muted-foreground">
           Período de análise: <span className="font-semibold text-foreground">{periodData.periodo}</span>
-          {view === "vertical" && (
+          {(view === "vertical" || view === "prospeccao") && (
             <>
               {" · "}Vertical: <span className="font-semibold" style={{ color: cor }}>{vertical}</span>
             </>
@@ -88,7 +88,7 @@ const Index = () => {
               <ParceirosTable data={periodData.parceiros_geral} />
             </SectionCard>
           </>
-        ) : (
+        ) : view === "vertical" ? (
           <>
             <SectionCard title="Selecione a vertical">
               <VerticalSelector meta={data.verticais_meta} selected={vertical} onChange={setVertical} />
@@ -147,14 +147,38 @@ const Index = () => {
                 fitSubtemas={new Set(verticalData.top10_subtemas.map((s) => s.subtema))}
               />
             </SectionCard>
+          </>
+        ) : (
+          <>
+            <SectionCard title="Selecione a vertical">
+              <VerticalSelector meta={data.verticais_meta} selected={vertical} onChange={setVertical} />
+            </SectionCard>
 
-            {vertical === "Manufatura Avançada" && verticalData.lista_prospeccao && verticalData.lista_prospeccao.length > 0 && (
-              <SectionCard
-                title="Lista de prospecção — Manufatura Avançada"
-                subtitle="Oportunidades concretas por operadora, líder e estratégia de aproximação"
-              >
-                <ListaProspeccao data={verticalData.lista_prospeccao} />
-              </SectionCard>
+            {vertical === "Manufatura Avançada" ? (
+              verticalData.lista_prospeccao && verticalData.lista_prospeccao.length > 0 ? (
+                <SectionCard
+                  title="Lista de prospecção — Manufatura Avançada"
+                  subtitle="Oportunidades concretas por operadora, líder e estratégia de aproximação"
+                >
+                  <ListaProspeccao data={verticalData.lista_prospeccao} />
+                </SectionCard>
+              ) : (
+                <SectionCard title="Sem dados">
+                  <p className="text-sm text-muted-foreground">
+                    Nenhuma oportunidade de prospecção disponível para o período selecionado.
+                  </p>
+                </SectionCard>
+              )
+            ) : (
+              <div className="flex justify-center py-12">
+                <div className="card-shadow w-full max-w-xl rounded-2xl border border-border bg-card p-10 text-center">
+                  <div className="text-6xl">🚧</div>
+                  <h3 className="mt-4 text-2xl font-bold text-foreground">Work in Progress</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Os dados desta vertical estão sendo processados e estarão disponíveis em breve.
+                  </p>
+                </div>
+              </div>
             )}
           </>
         )}
