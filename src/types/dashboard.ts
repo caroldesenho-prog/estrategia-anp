@@ -5,7 +5,7 @@ export type Vertical =
   | "Energias Renováveis"
   | "Materiais Avançados"
   | "Biotecnologia";
-export type View = "geral" | "vertical";
+export type View = "geral" | "vertical" | "prospeccao";
 
 export interface ResumoGeral {
   total_projetos: number;

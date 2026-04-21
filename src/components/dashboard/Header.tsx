@@ -12,6 +12,7 @@ export const Header = ({ period, view, onPeriodChange, onViewChange }: Props) =>
   const tabs: { value: View; label: string }[] = [
     { value: "geral", label: "Visão Geral" },
     { value: "vertical", label: "Análise por Vertical" },
+    { value: "prospeccao", label: "Prospecção" },
   ];
 
   return (
