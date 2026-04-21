@@ -84,6 +84,27 @@ export const ListaProspeccao = ({ data }: Props) => {
         operadora-alvo, líder responsável e tipo de produto a ofertar.
       </p>
 
+      <KpiCards
+        items={[
+          { label: "Total de oportunidades", value: formatNumber(stats.total), icon: Briefcase },
+          { label: "Valor endereçável", value: formatBRL(stats.valor), icon: Wallet, tone: "bg-primary-soft text-primary" },
+          {
+            label: "Estratégia 1 (ICT principal)",
+            value: formatNumber(stats.e1Count),
+            sub: formatBRL(stats.e1Valor),
+            icon: Target,
+            tone: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+          },
+          {
+            label: "Estratégia 2 (Coexecução)",
+            value: formatNumber(stats.e2Count),
+            sub: formatBRL(stats.e2Valor),
+            icon: Handshake,
+            tone: "bg-success-soft text-success",
+          },
+        ]}
+      />
+
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="card-shadow rounded-xl border border-border bg-card p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Líder</p>
