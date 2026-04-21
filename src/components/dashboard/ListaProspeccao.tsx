@@ -75,7 +75,8 @@ export const ListaProspeccao = ({ data }: Props) => {
     const leonardo = data.filter((x) => x.lider === "Leonardo Andrade");
     const alex = data.filter((x) => x.lider === "Alex Charles");
     const sumVal = (arr: ProspeccaoItem[]) => arr.reduce((s, x) => s + (x.valor || 0), 0);
-    const areas = (arr: ProspeccaoItem[]) => new Set(arr.map((x) => x.area_da_vertical)).size;
+    const areas = (arr: ProspeccaoItem[]) => Array.from(new Set(arr.map((x) => x.area_da_vertical))).filter(Boolean);
+    const countE = (arr: ProspeccaoItem[], e: 1 | 2) => arr.filter((x) => x.estrategia === e).length;
     return {
       total,
       valor,
@@ -83,8 +84,20 @@ export const ListaProspeccao = ({ data }: Props) => {
       e1Valor: sumVal(e1),
       e2Count: e2.length,
       e2Valor: sumVal(e2),
-      leonardo: { opp: leonardo.length, valor: sumVal(leonardo), areas: areas(leonardo) },
-      alex: { opp: alex.length, valor: sumVal(alex), areas: areas(alex) },
+      leonardo: {
+        opp: leonardo.length,
+        valor: sumVal(leonardo),
+        areas: areas(leonardo),
+        e1: countE(leonardo, 1),
+        e2: countE(leonardo, 2),
+      },
+      alex: {
+        opp: alex.length,
+        valor: sumVal(alex),
+        areas: areas(alex),
+        e1: countE(alex, 1),
+        e2: countE(alex, 2),
+      },
       e1List: [...e1].sort((a, b) => b.valor - a.valor),
       e2List: [...e2].sort((a, b) => b.valor - a.valor),
     };
@@ -160,28 +173,105 @@ export const ListaProspeccao = ({ data }: Props) => {
       />
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="card-shadow rounded-xl border border-border bg-card p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Líder</p>
-          <p className="mt-1 text-lg font-bold text-foreground">Leonardo Andrade</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Grupo: <span className="font-medium text-foreground">Manufatura Avançada</span> · {stats.leonardo.areas} áreas
-          </p>
-          <div className="mt-3 flex items-center gap-4 text-sm">
-            <span className="font-semibold text-foreground">{formatNumber(stats.leonardo.opp)} opp</span>
-            <span className="font-semibold text-primary">{formatBRL(stats.leonardo.valor)}</span>
+        {[
+          {
+            grupo: "Manufatura Avançada",
+            lider: "Leonardo Andrade",
+            data: stats.leonardo,
+          },
+          {
+            grupo: "Metalmecânica & Metrologia",
+            lider: "Alex Charles",
+            data: stats.alex,
+          },
+        ].map((card) => (
+          <div key={card.lider} className="card-shadow rounded-xl border border-border bg-card p-5">
+            {/* Equipe responsável */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                  style={{ backgroundColor: "#1F4E79" }}
+                >
+                  KT
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    Especialista Setorial
+                  </p>
+                  <p className="truncate text-sm font-semibold text-foreground">Kawan Trindade Lessa Paulo</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                  style={{ backgroundColor: "#534AB7" }}
+                >
+                  MC
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    Arquiteto de Soluções
+                  </p>
+                  <p className="truncate text-sm font-semibold text-foreground">Matheus Coppa</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-4 h-px bg-border" />
+
+            {/* Grupo + Líder */}
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Grupo</p>
+                <p className="mt-0.5 font-semibold text-foreground">{card.grupo}</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Líder da área</p>
+                <p className="mt-0.5 font-semibold text-foreground">{card.lider}</p>
+              </div>
+            </div>
+
+            {/* Áreas cobertas */}
+            {card.data.areas.length > 0 && (
+              <div className="mt-3">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  Áreas cobertas ({card.data.areas.length})
+                </p>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {card.data.areas.map((a) => (
+                    <span
+                      key={a}
+                      className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Stats */}
+            <div className="mt-4 grid grid-cols-4 gap-2 border-t border-border pt-3 text-center">
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Opp.</p>
+                <p className="text-base font-bold text-foreground">{formatNumber(card.data.opp)}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Valor end.</p>
+                <p className="text-sm font-bold text-primary">{formatBRL(card.data.valor)}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">E1</p>
+                <p className="text-base font-bold text-blue-600 dark:text-blue-400">{formatNumber(card.data.e1)}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">E2</p>
+                <p className="text-base font-bold text-emerald-600 dark:text-emerald-400">{formatNumber(card.data.e2)}</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="card-shadow rounded-xl border border-border bg-card p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Líder</p>
-          <p className="mt-1 text-lg font-bold text-foreground">Alex Charles</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Grupo: <span className="font-medium text-foreground">Metalmecânica & Metrologia</span> · {stats.alex.areas} áreas
-          </p>
-          <div className="mt-3 flex items-center gap-4 text-sm">
-            <span className="font-semibold text-foreground">{formatNumber(stats.alex.opp)} opp</span>
-            <span className="font-semibold text-primary">{formatBRL(stats.alex.valor)}</span>
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Estratégia 1 */}
