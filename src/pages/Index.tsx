@@ -80,12 +80,12 @@ const Index = () => {
               <TaxaIctChart data={periodData.taxa_ict_operadora} />
             </SectionCard>
 
-            <SectionCard title="5 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
-              <ParceirosTable data={periodData.parceiros_geral} />
+            <SectionCard title="5 · Concorrentes ICTs" subtitle="Posicionamento de ICTs e concentração por operadora">
+              <ConcorrentesIcts concorrentes={periodData.concorrentes} heatmap={periodData.heatmap_ict_op} />
             </SectionCard>
 
-            <SectionCard title="6 · Concorrentes ICTs" subtitle="Posicionamento de ICTs e concentração por operadora">
-              <ConcorrentesIcts concorrentes={periodData.concorrentes} heatmap={periodData.heatmap_ict_op} />
+            <SectionCard title="6 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
+              <ParceirosTable data={periodData.parceiros_geral} />
             </SectionCard>
           </>
         ) : (
