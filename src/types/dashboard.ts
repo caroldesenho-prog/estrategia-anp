@@ -86,6 +86,22 @@ export interface TemaComFit {
   fit_valor: number;
 }
 
+export interface ProspeccaoItem {
+  operadora: string;
+  titulo: string;
+  subtema_anp: string;
+  area_da_vertical: string;
+  lider: string;
+  competencias_vertical: string[];
+  tipo_produto: string;
+  valor: number;
+  ano: number;
+  estrategia: 1 | 2;
+  estrategia_label: string;
+  empresa_parceira: string;
+  qualificacao: string;
+}
+
 export interface VerticalData {
   cor: string;
   resumo: ResumoVertical;
@@ -94,6 +110,7 @@ export interface VerticalData {
   gap_por_operadora: GapVerticalRow[];
   crescimento_subtemas: CrescimentoSubtema[];
   temas_com_fit: TemaComFit[];
+  lista_prospeccao?: ProspeccaoItem[];
 }
 
 export interface TemaInvestigado { tema: string; valor: number; projetos: number; }

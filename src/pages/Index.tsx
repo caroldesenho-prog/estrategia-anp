@@ -19,6 +19,7 @@ import { VerticalGap } from "@/components/dashboard/VerticalGap";
 import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento";
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
 import { Top5OperadorasFit } from "@/components/dashboard/Top5OperadorasFit";
+import { ListaProspeccao } from "@/components/dashboard/ListaProspeccao";
 import { formatBRL, formatNumber, formatPct } from "@/lib/format";
 import { Briefcase, Wallet, CheckCircle2, AlertCircle, Target, TrendingUp, AlertTriangle, Coins } from "lucide-react";
 
@@ -157,6 +158,15 @@ const Index = () => {
                 fitSubtemas={new Set(verticalData.top10_subtemas.map((s) => s.subtema))}
               />
             </SectionCard>
+
+            {vertical === "Manufatura Avançada" && verticalData.lista_prospeccao && verticalData.lista_prospeccao.length > 0 && (
+              <SectionCard
+                title="Lista de prospecção — Manufatura Avançada"
+                subtitle="Oportunidades concretas por operadora, líder e estratégia de aproximação"
+              >
+                <ListaProspeccao data={verticalData.lista_prospeccao} />
+              </SectionCard>
+            )}
           </>
         )}
 
