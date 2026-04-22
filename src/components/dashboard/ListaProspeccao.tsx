@@ -364,7 +364,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {it.tipo_produto}
+                      {normalizeTipo(it.tipo_produto)}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right font-semibold tabular-nums text-graphite-dark">{formatBRL(it.valor)}</TableCell>
