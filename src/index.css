@@ -1,67 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Radar PD&I ANP — Design System
-   Palette: deep blue #1F4E79, green #1D9E75, amber #EF9F27, gray #888780
+/* SENAI-SP Distrito Tecnológico — Design System
+   Vermelho #D72042 · Bordeaux #8E1A3A · Grafite escuro #303A42 · Grafite médio #5E6267
+   Bege claro #F7F2EF · Bege médio #E5D5CC · Branco #FFFFFF
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 210 17% 98%;          /* #F8F9FA */
-    --foreground: 210 11% 15%;
+    --background: 0 0% 100%;                    /* #FFFFFF */
+    --foreground: 207 16% 22%;                  /* #303A42 grafite escuro */
 
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 207 16% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 207 16% 22%;
 
-    --primary: 210 59% 30%;             /* #1F4E79 deep blue */
+    --primary: 348 74% 49%;                     /* #D72042 vermelho */
     --primary-foreground: 0 0% 100%;
-    --primary-soft: 210 59% 95%;
+    --primary-soft: 348 86% 93%;                /* #FAE0E4 */
 
-    --secondary: 210 17% 95%;
-    --secondary-foreground: 210 11% 15%;
+    --secondary: 22 33% 95%;                    /* #F7F2EF bege claro */
+    --secondary-foreground: 207 16% 22%;
 
-    --muted: 210 17% 95%;
-    --muted-foreground: 60 1% 53%;      /* #888780 */
+    --muted: 22 33% 95%;                        /* #F7F2EF */
+    --muted-foreground: 210 4% 39%;             /* #5E6267 grafite médio */
 
-    --accent: 210 59% 95%;
-    --accent-foreground: 210 59% 30%;
+    --accent: 22 33% 95%;
+    --accent-foreground: 207 16% 22%;
 
-    --success: 158 70% 36%;             /* #1D9E75 */
+    --bordeaux: 343 69% 33%;                    /* #8E1A3A */
+    --bordeaux-foreground: 0 0% 100%;
+    --bordeaux-soft: 343 41% 89%;               /* #EED8DF */
+
+    --graphite-dark: 207 16% 22%;               /* #303A42 */
+    --graphite-medium: 210 4% 39%;              /* #5E6267 */
+
+    --beige-light: 22 33% 95%;                  /* #F7F2EF */
+    --beige-medium: 18 31% 85%;                 /* #E5D5CC */
+
+    --success: 158 70% 36%;
     --success-foreground: 0 0% 100%;
     --success-soft: 158 70% 94%;
 
-    --warning: 35 87% 55%;              /* #EF9F27 */
+    --warning: 35 87% 55%;
     --warning-foreground: 0 0% 100%;
     --warning-soft: 35 87% 95%;
 
-    --neutral: 60 1% 53%;               /* #888780 */
-    --neutral-soft: 60 1% 92%;
+    --neutral: 210 4% 39%;
+    --neutral-soft: 18 31% 85%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 348 74% 49%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 15% 89%;
-    --input: 214 15% 89%;
-    --ring: 210 59% 30%;
+    --border: 18 31% 85%;                       /* #E5D5CC bege médio */
+    --input: 18 31% 85%;
+    --ring: 348 74% 49%;
 
-    --radius: 0.625rem;
+    --radius: 0.5rem;
 
-    --shadow-card: 0 1px 3px 0 hsl(210 11% 15% / 0.04), 0 1px 2px -1px hsl(210 11% 15% / 0.04);
-    --shadow-elevated: 0 4px 12px -2px hsl(210 11% 15% / 0.08);
+    --shadow-card: 0 1px 3px 0 hsl(207 16% 22% / 0.04), 0 1px 2px -1px hsl(207 16% 22% / 0.04);
+    --shadow-elevated: 0 4px 12px -2px hsl(207 16% 22% / 0.08);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 207 16% 22%;
+    --sidebar-primary: 348 74% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 22 33% 95%;
+    --sidebar-accent-foreground: 207 16% 22%;
+    --sidebar-border: 18 31% 85%;
+    --sidebar-ring: 348 74% 49%;
   }
 }
 
@@ -70,7 +83,7 @@
     @apply border-border;
   }
   html, body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-feature-settings: 'cv11', 'ss01';
   }
   body {
