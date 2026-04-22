@@ -20,6 +20,7 @@ import { VerticalCrescimento } from "@/components/dashboard/VerticalCrescimento"
 import { VerticalTemas } from "@/components/dashboard/VerticalTemas";
 import { Top5OperadorasFit } from "@/components/dashboard/Top5OperadorasFit";
 import { ListaProspeccao } from "@/components/dashboard/ListaProspeccao";
+import { AreasTemasAnp } from "@/components/dashboard/AreasTemasAnp";
 import { formatBRL, formatNumber, formatPct } from "@/lib/format";
 import { Briefcase, Wallet, CheckCircle2, AlertCircle, Target, TrendingUp, AlertTriangle, Coins } from "lucide-react";
 
@@ -68,6 +69,13 @@ const Index = () => {
                 },
               ]}
             />
+
+            <SectionCard
+              title="7 Áreas · 23 Temas ANP"
+              subtitle="Base RT3 · histórico completo (2016-2025) · 5.476 projetos · R$ 42,5 bi"
+            >
+              <AreasTemasAnp />
+            </SectionCard>
 
             <SectionCard title="1 · Obrigação de Investimentos ANP" subtitle="Top 15 operadoras por volume investido em PD&I">
               <OperadorasChart data={periodData.top15_operadoras} />
