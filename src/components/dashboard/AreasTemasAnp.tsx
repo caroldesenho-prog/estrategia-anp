@@ -171,6 +171,15 @@ export const AreasTemasAnp = () => {
         <Badge label="Subtemas" value="100+" />
       </div>
 
+      <p className="flex items-center gap-2 text-graphite-medium" style={{ fontSize: "11px" }}>
+        <span
+          aria-hidden
+          className="inline-block h-1.5 w-6 shrink-0 rounded-full bg-graphite-medium/60"
+        />
+        — A barra indica o volume relativo de cada tema dentro da sua área: quanto maior, maior o
+        investimento comparado aos demais temas do mesmo grupo.
+      </p>
+
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {areas.map((a) => (
           <div key={a.nome} className={a.span === "full" ? "md:col-span-2" : ""}>
