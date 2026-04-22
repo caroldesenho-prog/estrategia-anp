@@ -10,8 +10,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PAGE_SIZE = 20;
 
-const tipoBadge = (tipo: string) => {
+const normalizeTipo = (tipo: string): string => {
+  if (!tipo) return tipo;
   const t = tipo.toUpperCase();
+  if (t.includes("METROLOGIA")) return "Metrologia";
+  const hasPdi = t.includes("PDI");
+  const hasServ = t.includes("SERVI");
+  if (hasPdi && hasServ) return "PDI e Serviços";
+  if (hasPdi) return "PDI";
+  if (hasServ) return "Serviços";
+  return tipo;
+};
+
+const TIPO_ORDER = ["PDI", "Serviços", "PDI e Serviços", "Metrologia"];
+
+const tipoBadge = (tipo: string) => {
+  const t = normalizeTipo(tipo).toUpperCase();
   if (t.includes("METROLOGIA"))
     return "border-transparent bg-bordeaux-soft text-bordeaux";
   if (t.includes("PDI"))
