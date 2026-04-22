@@ -65,13 +65,13 @@ export const ListaProspeccao = ({ data }: Props) => {
   const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
 
   const tiposDisponiveis = useMemo(() => {
-    const set = new Set(data.map((x) => x.tipo_produto).filter(Boolean));
-    return Array.from(set).sort();
+    const set = new Set(data.map((x) => normalizeTipo(x.tipo_produto)).filter(Boolean));
+    return TIPO_ORDER.filter((t) => set.has(t));
   }, [data]);
 
   const filtered = useMemo(() => {
     if (tipoFiltro.length === 0) return data;
-    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
+    return data.filter((x) => tipoFiltro.includes(normalizeTipo(x.tipo_produto)));
   }, [data, tipoFiltro]);
 
   const toggleTipo = (t: string) => {
