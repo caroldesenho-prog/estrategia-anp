@@ -10,8 +10,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PAGE_SIZE = 20;
 
-const tipoBadge = (tipo: string) => {
+const normalizeTipo = (tipo: string): string => {
+  if (!tipo) return tipo;
   const t = tipo.toUpperCase();
+  if (t.includes("METROLOGIA")) return "Metrologia";
+  const hasPdi = t.includes("PDI");
+  const hasServ = t.includes("SERVI");
+  if (hasPdi && hasServ) return "PDI e Serviços";
+  if (hasPdi) return "PDI";
+  if (hasServ) return "Serviços";
+  return tipo;
+};
+
+const TIPO_ORDER = ["PDI", "Serviços", "PDI e Serviços", "Metrologia"];
+
+const tipoBadge = (tipo: string) => {
+  const t = normalizeTipo(tipo).toUpperCase();
   if (t.includes("METROLOGIA"))
     return "border-transparent bg-bordeaux-soft text-bordeaux";
   if (t.includes("PDI"))
@@ -51,13 +65,13 @@ export const ListaProspeccao = ({ data }: Props) => {
   const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
 
   const tiposDisponiveis = useMemo(() => {
-    const set = new Set(data.map((x) => x.tipo_produto).filter(Boolean));
-    return Array.from(set).sort();
+    const set = new Set(data.map((x) => normalizeTipo(x.tipo_produto)).filter(Boolean));
+    return TIPO_ORDER.filter((t) => set.has(t));
   }, [data]);
 
   const filtered = useMemo(() => {
     if (tipoFiltro.length === 0) return data;
-    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
+    return data.filter((x) => tipoFiltro.includes(normalizeTipo(x.tipo_produto)));
   }, [data, tipoFiltro]);
 
   const toggleTipo = (t: string) => {
@@ -302,7 +316,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {it.tipo_produto}
+                      {normalizeTipo(it.tipo_produto)}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-xs text-graphite-medium">{it.qualificacao}</TableCell>
@@ -350,7 +364,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {it.tipo_produto}
+                      {normalizeTipo(it.tipo_produto)}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right font-semibold tabular-nums text-graphite-dark">{formatBRL(it.valor)}</TableCell>
