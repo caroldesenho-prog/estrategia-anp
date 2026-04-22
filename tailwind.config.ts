@@ -62,6 +62,15 @@ export default {
           soft: "hsl(var(--neutral-soft))",
         },
         "primary-soft": "hsl(var(--primary-soft))",
+        bordeaux: {
+          DEFAULT: "hsl(var(--bordeaux))",
+          foreground: "hsl(var(--bordeaux-foreground))",
+          soft: "hsl(var(--bordeaux-soft))",
+        },
+        "graphite-dark": "hsl(var(--graphite-dark))",
+        "graphite-medium": "hsl(var(--graphite-medium))",
+        "beige-light": "hsl(var(--beige-light))",
+        "beige-medium": "hsl(var(--beige-medium))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
