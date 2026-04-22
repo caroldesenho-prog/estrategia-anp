@@ -118,10 +118,7 @@ const Badge = ({ label, value }: { label: string; value: string }) => (
 const AreaCard = ({ area }: { area: Area }) => {
   const max = Math.max(...area.temas.map((t) => t.valor));
   return (
-    <div
-      className="rounded-lg border border-beige-medium p-5"
-      style={{ backgroundColor: area.bgColor }}
-    >
+    <div className="rounded-lg border border-beige-medium bg-beige-light p-5">
       <header className="mb-4 flex items-start justify-between gap-3">
         <div className="flex items-center gap-2">
           <span
