@@ -13,10 +13,10 @@ const PAGE_SIZE = 20;
 const tipoBadge = (tipo: string) => {
   const t = tipo.toUpperCase();
   if (t.includes("METROLOGIA"))
-    return "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300";
+    return "border-transparent bg-bordeaux-soft text-bordeaux";
   if (t.includes("PDI"))
-    return "bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300";
-  return "bg-muted text-muted-foreground border-border";
+    return "border-transparent bg-primary-soft text-primary";
+  return "border-transparent bg-beige-light text-graphite-dark";
 };
 
 const Pager = ({ page, total, onChange }: { page: number; total: number; onChange: (p: number) => void }) => {
@@ -127,7 +127,7 @@ export const ListaProspeccao = ({ data }: Props) => {
           className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
             tipoFiltro.length === 0
               ? "border-primary bg-primary text-primary-foreground"
-              : "border-border bg-card text-muted-foreground hover:bg-muted"
+              : "border-beige-medium bg-white text-graphite-medium hover:bg-beige-light"
           }`}
         >
           Todos
@@ -142,7 +142,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
                 active
                   ? "border-primary bg-primary text-primary-foreground"
-                  : "border-border bg-card text-muted-foreground hover:bg-muted"
+                  : "border-beige-medium bg-white text-graphite-medium hover:bg-beige-light"
               }`}
             >
               {t}
@@ -160,14 +160,14 @@ export const ListaProspeccao = ({ data }: Props) => {
             value: formatNumber(stats.e1Count),
             sub: formatBRL(stats.e1Valor),
             icon: Target,
-            tone: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+            tone: "bg-primary-soft text-primary",
           },
           {
             label: "Estratégia 2 (Coexecução)",
             value: formatNumber(stats.e2Count),
             sub: formatBRL(stats.e2Valor),
             icon: Handshake,
-            tone: "bg-success-soft text-success",
+            tone: "bg-bordeaux-soft text-bordeaux",
           },
         ]}
       />
@@ -185,64 +185,62 @@ export const ListaProspeccao = ({ data }: Props) => {
             data: stats.alex,
           },
         ].map((card) => (
-          <div key={card.lider} className="card-shadow rounded-xl border border-border bg-card p-5">
+          <div key={card.lider} className="card-shadow rounded-lg border border-beige-medium bg-beige-light p-5">
             {/* Equipe responsável */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
               <div className="flex items-center gap-3">
                 <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-                  style={{ backgroundColor: "#1F4E79" }}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white"
                 >
                   KT
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-graphite-medium">
                     Especialista Setorial
                   </p>
-                  <p className="truncate text-sm font-semibold text-foreground">Kawan Trindade Lessa Paulo</p>
+                  <p className="truncate text-sm font-semibold text-graphite-dark">Kawan Trindade Lessa Paulo</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-                  style={{ backgroundColor: "#534AB7" }}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bordeaux text-sm font-bold text-white"
                 >
                   MC
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-graphite-medium">
                     Arquiteto de Soluções
                   </p>
-                  <p className="truncate text-sm font-semibold text-foreground">Matheus Coppa</p>
+                  <p className="truncate text-sm font-semibold text-graphite-dark">Matheus Coppa</p>
                 </div>
               </div>
             </div>
 
-            <div className="my-4 h-px bg-border" />
+            <div className="my-4 h-px bg-beige-medium" />
 
             {/* Grupo + Líder */}
             <div className="grid grid-cols-2 gap-3 text-sm">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Grupo</p>
-                <p className="mt-0.5 font-semibold text-foreground">{card.grupo}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-graphite-medium">Grupo</p>
+                <p className="mt-0.5 font-semibold text-graphite-dark">{card.grupo}</p>
               </div>
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Líder da área</p>
-                <p className="mt-0.5 font-semibold text-foreground">{card.lider}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-graphite-medium">Líder da área</p>
+                <p className="mt-0.5 font-semibold text-primary">{card.lider}</p>
               </div>
             </div>
 
             {/* Áreas cobertas */}
             {card.data.areas.length > 0 && (
               <div className="mt-3">
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-graphite-medium">
                   Áreas cobertas ({card.data.areas.length})
                 </p>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {card.data.areas.map((a) => (
                     <span
                       key={a}
-                      className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                      className="rounded-md bg-white px-2 py-0.5 text-xs font-medium text-graphite-medium border border-beige-medium"
                     >
                       {a}
                     </span>
@@ -252,22 +250,22 @@ export const ListaProspeccao = ({ data }: Props) => {
             )}
 
             {/* Stats */}
-            <div className="mt-4 grid grid-cols-4 gap-2 border-t border-border pt-3 text-center">
+            <div className="mt-4 grid grid-cols-4 gap-2 border-t border-beige-medium pt-3 text-center">
               <div>
-                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Opp.</p>
-                <p className="text-base font-bold text-foreground">{formatNumber(card.data.opp)}</p>
+                <p className="text-[10px] uppercase tracking-wide text-graphite-medium">Opp.</p>
+                <p className="text-base font-bold text-graphite-dark">{formatNumber(card.data.opp)}</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Valor end.</p>
-                <p className="text-sm font-bold text-primary">{formatBRL(card.data.valor)}</p>
+                <p className="text-[10px] uppercase tracking-wide text-graphite-medium">Valor end.</p>
+                <p className="text-sm font-bold text-graphite-dark">{formatBRL(card.data.valor)}</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">E1</p>
-                <p className="text-base font-bold text-blue-600 dark:text-blue-400">{formatNumber(card.data.e1)}</p>
+                <p className="text-[10px] uppercase tracking-wide text-graphite-medium">E1</p>
+                <p className="text-base font-bold text-primary">{formatNumber(card.data.e1)}</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-wide text-muted-foreground">E2</p>
-                <p className="text-base font-bold text-emerald-600 dark:text-emerald-400">{formatNumber(card.data.e2)}</p>
+                <p className="text-[10px] uppercase tracking-wide text-graphite-medium">E2</p>
+                <p className="text-base font-bold text-bordeaux">{formatNumber(card.data.e2)}</p>
               </div>
             </div>
           </div>
@@ -275,10 +273,10 @@ export const ListaProspeccao = ({ data }: Props) => {
       </div>
 
       {/* Estratégia 1 */}
-      <div className="rounded-xl border border-border bg-card">
-        <div className="flex items-center gap-3 border-b border-border px-5 py-3">
-          <Badge className="bg-blue-600 text-white hover:bg-blue-600">Estratégia 1 — Virar ICT principal</Badge>
-          <span className="text-sm text-muted-foreground">{stats.e1List.length} oportunidades</span>
+      <div className="rounded-lg border border-beige-medium bg-white">
+        <div className="flex items-center gap-3 border-b border-beige-medium px-5 py-3">
+          <Badge className="bg-primary text-white hover:bg-primary">Estratégia 1 — Virar ICT principal</Badge>
+          <span className="text-sm text-graphite-medium">{stats.e1List.length} oportunidades</span>
         </div>
         <div className="overflow-x-auto p-2">
           <Table>
@@ -296,10 +294,10 @@ export const ListaProspeccao = ({ data }: Props) => {
             <TableBody>
               {e1Page.map((it, i) => (
                 <TableRow key={`e1-${page1}-${i}`}>
-                  <TableCell className="font-medium">{it.operadora}</TableCell>
-                  <TableCell>{it.area_da_vertical}</TableCell>
-                  <TableCell>{it.lider}</TableCell>
-                  <TableCell className="max-w-[280px] text-xs text-muted-foreground">
+                  <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
+                  <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
+                  <TableCell className="text-primary font-medium">{it.lider}</TableCell>
+                  <TableCell className="max-w-[280px] text-xs text-graphite-medium">
                     {it.competencias_vertical.slice(0, 2).join(" · ")}
                   </TableCell>
                   <TableCell>
@@ -307,8 +305,8 @@ export const ListaProspeccao = ({ data }: Props) => {
                       {it.tipo_produto}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-xs">{it.qualificacao}</TableCell>
-                  <TableCell className="text-right font-semibold tabular-nums">{formatBRL(it.valor)}</TableCell>
+                  <TableCell className="text-xs text-graphite-medium">{it.qualificacao}</TableCell>
+                  <TableCell className="text-right font-semibold tabular-nums text-graphite-dark">{formatBRL(it.valor)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -320,12 +318,12 @@ export const ListaProspeccao = ({ data }: Props) => {
       </div>
 
       {/* Estratégia 2 */}
-      <div className="rounded-xl border border-border bg-card">
-        <div className="flex items-center gap-3 border-b border-border px-5 py-3">
-          <Badge className="bg-emerald-600 text-white hover:bg-emerald-600">
+      <div className="rounded-lg border border-beige-medium bg-white">
+        <div className="flex items-center gap-3 border-b border-beige-medium px-5 py-3">
+          <Badge className="bg-bordeaux text-white hover:bg-bordeaux">
             Estratégia 2 — Coexecução com empresa BR
           </Badge>
-          <span className="text-sm text-muted-foreground">{stats.e2List.length} oportunidades</span>
+          <span className="text-sm text-graphite-medium">{stats.e2List.length} oportunidades</span>
         </div>
         <div className="overflow-x-auto p-2">
           <Table>
@@ -343,11 +341,11 @@ export const ListaProspeccao = ({ data }: Props) => {
             <TableBody>
               {e2Page.map((it, i) => (
                 <TableRow key={`e2-${page2}-${i}`}>
-                  <TableCell className="font-medium">{it.operadora}</TableCell>
-                  <TableCell>{it.area_da_vertical}</TableCell>
-                  <TableCell>{it.lider}</TableCell>
-                  <TableCell className="font-medium text-blue-600 dark:text-blue-400">{it.empresa_parceira}</TableCell>
-                  <TableCell className="max-w-[260px] text-xs text-muted-foreground">
+                  <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
+                  <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
+                  <TableCell className="text-primary font-medium">{it.lider}</TableCell>
+                  <TableCell className="font-medium text-primary">{it.empresa_parceira}</TableCell>
+                  <TableCell className="max-w-[260px] text-xs text-graphite-medium">
                     {it.competencias_vertical.slice(0, 2).join(" · ")}
                   </TableCell>
                   <TableCell>
@@ -355,7 +353,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                       {it.tipo_produto}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-right font-semibold tabular-nums">{formatBRL(it.valor)}</TableCell>
+                  <TableCell className="text-right font-semibold tabular-nums text-graphite-dark">{formatBRL(it.valor)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -366,9 +364,9 @@ export const ListaProspeccao = ({ data }: Props) => {
         </div>
       </div>
 
-      <p className="rounded-lg border border-border bg-muted/40 p-4 text-xs leading-relaxed text-muted-foreground">
-        <strong className="text-foreground">Estratégia 1</strong> → agente aciona o líder da área e juntos abordam a
-        operadora diretamente. <strong className="text-foreground">Estratégia 2</strong> → agente contata primeiro a
+      <p className="rounded-lg border border-beige-medium bg-beige-light p-4 text-xs leading-relaxed text-graphite-medium">
+        <strong className="text-graphite-dark">Estratégia 1</strong> → agente aciona o líder da área e juntos abordam a
+        operadora diretamente. <strong className="text-graphite-dark">Estratégia 2</strong> → agente contata primeiro a
         empresa parceira — ela já tem o relacionamento com a operadora e o instituto entra como ICT na coexecução.
       </p>
     </div>
