@@ -316,7 +316,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {it.tipo_produto}
+                      {normalizeTipo(it.tipo_produto)}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-xs text-graphite-medium">{it.qualificacao}</TableCell>
