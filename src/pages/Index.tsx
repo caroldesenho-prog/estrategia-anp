@@ -39,11 +39,11 @@ const Index = () => {
       <Header period={period} view={view} onPeriodChange={setPeriod} onViewChange={setView} />
 
       <main className="mx-auto max-w-[1440px] space-y-6 px-6 py-6">
-        <p className="text-sm text-muted-foreground">
-          Período de análise: <span className="font-semibold text-foreground">{periodData.periodo}</span>
+        <p className="text-sm text-graphite-medium">
+          Período de análise: <span className="font-semibold text-graphite-dark">{periodData.periodo}</span>
           {(view === "vertical" || view === "prospeccao") && (
             <>
-              {" · "}Vertical: <span className="font-semibold" style={{ color: cor }}>{vertical}</span>
+              {" · "}Vertical: <span className="font-semibold text-graphite-dark">{vertical}</span>
             </>
           )}
         </p>
@@ -171,10 +171,10 @@ const Index = () => {
               )
             ) : (
               <div className="flex justify-center py-12">
-                <div className="card-shadow w-full max-w-xl rounded-2xl border border-border bg-card p-10 text-center">
+                <div className="card-shadow w-full max-w-xl rounded-lg border border-beige-medium bg-white p-10 text-center">
                   <div className="text-6xl">🚧</div>
-                  <h3 className="mt-4 text-2xl font-bold text-foreground">Work in Progress</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <h3 className="mt-4 text-2xl font-bold text-graphite-dark">Work in Progress</h3>
+                  <p className="mt-2 text-sm text-graphite-medium">
                     Os dados desta vertical estão sendo processados e estarão disponíveis em breve.
                   </p>
                 </div>
@@ -183,8 +183,8 @@ const Index = () => {
           </>
         )}
 
-        <footer className="py-6 text-center text-xs text-muted-foreground">
-          Radar PD&I ANP · dados processados a partir do repositório de projetos PD&I
+        <footer className="py-6 text-center text-xs text-graphite-medium">
+          Radar PD&I ANP · SENAI-SP Distrito Tecnológico
         </footer>
       </main>
     </div>
