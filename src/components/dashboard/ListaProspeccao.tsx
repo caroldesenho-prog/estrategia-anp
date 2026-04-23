@@ -7,8 +7,26 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const PAGE_SIZE = 20;
+
+const truncate = (s: string, n = 60) => (s && s.length > n ? s.slice(0, n).trimEnd() + "…" : s || "");
+
+const TituloCell = ({ titulo }: { titulo: string }) => (
+  <TooltipProvider delayDuration={150}>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span className="block max-w-[280px] cursor-help truncate text-[11px] text-graphite-dark">
+          {truncate(titulo, 60)}
+        </span>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="max-w-md text-xs">
+        {titulo}
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+);
 
 const normalizeTipo = (tipo: string): string => {
   if (!tipo) return tipo;
@@ -297,6 +315,7 @@ export const ListaProspeccao = ({ data }: Props) => {
             <TableHeader>
               <TableRow>
                 <TableHead>Operadora</TableHead>
+                <TableHead>Título do projeto</TableHead>
                 <TableHead>Área da vertical</TableHead>
                 <TableHead>Líder da área</TableHead>
                 <TableHead>Competência da vertical</TableHead>
@@ -309,6 +328,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               {e1Page.map((it, i) => (
                 <TableRow key={`e1-${page1}-${i}`}>
                   <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
+                  <TableCell><TituloCell titulo={it.titulo} /></TableCell>
                   <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
                   <TableCell className="text-primary font-medium">{it.lider}</TableCell>
                   <TableCell className="max-w-[280px] text-xs text-graphite-medium">
@@ -344,6 +364,7 @@ export const ListaProspeccao = ({ data }: Props) => {
             <TableHeader>
               <TableRow>
                 <TableHead>Operadora</TableHead>
+                <TableHead>Título do projeto</TableHead>
                 <TableHead>Área da vertical</TableHead>
                 <TableHead>Líder da área</TableHead>
                 <TableHead>Empresa parceira</TableHead>
@@ -356,6 +377,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               {e2Page.map((it, i) => (
                 <TableRow key={`e2-${page2}-${i}`}>
                   <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
+                  <TableCell><TituloCell titulo={it.titulo} /></TableCell>
                   <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
                   <TableCell className="text-primary font-medium">{it.lider}</TableCell>
                   <TableCell className="font-medium text-primary">{it.empresa_parceira}</TableCell>
