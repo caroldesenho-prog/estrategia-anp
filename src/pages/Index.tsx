@@ -70,13 +70,6 @@ const Index = () => {
               ]}
             />
 
-            <SectionCard
-              title="7 Áreas · 23 Temas ANP"
-              subtitle="Base RT3 · histórico completo (2016-2025) · 5.476 projetos · R$ 42,5 bi"
-            >
-              <AreasTemasAnp />
-            </SectionCard>
-
             <SectionCard title="1 · Obrigação de Investimentos ANP" subtitle="Top 15 operadoras por volume investido em PD&I">
               <OperadorasChart data={periodData.top15_operadoras} />
             </SectionCard>
@@ -94,6 +87,13 @@ const Index = () => {
 
             <SectionCard title="6 · Parceiros potenciais" subtitle="Empresas brasileiras executoras com maior recorrência">
               <ParceirosTable data={periodData.parceiros_geral} />
+            </SectionCard>
+
+            <SectionCard
+              title="Taxonomia ANP"
+              subtitle="Base RT3 · histórico completo (2016-2025) · 5.476 projetos · R$ 42,5 bi"
+            >
+              <AreasTemasAnp />
             </SectionCard>
           </>
         ) : view === "vertical" ? (

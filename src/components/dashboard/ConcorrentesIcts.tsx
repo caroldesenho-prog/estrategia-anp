@@ -31,7 +31,8 @@ export const ConcorrentesIcts = ({ concorrentes, heatmap }: Props) => {
   const cellColor = (v: number) => {
     if (!v) return "hsl(var(--muted))";
     const intensity = Math.max(0.15, v / max);
-    return `hsl(210 59% ${Math.round(85 - intensity * 55)}%)`;
+    // Distrito red (#D72042 → hsl(350 71% 49%)). Lightness goes from ~92% (low) down to ~40% (high).
+    return `hsl(350 71% ${Math.round(92 - intensity * 52)}%)`;
   };
 
   return (
