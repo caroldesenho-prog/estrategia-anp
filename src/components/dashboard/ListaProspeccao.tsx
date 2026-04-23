@@ -149,6 +149,67 @@ export const ListaProspeccao = ({ data }: Props) => {
         operadora-alvo, líder responsável e tipo de produto a ofertar.
       </p>
 
+      {/* Filter bar */}
+      <div className="flex flex-wrap items-center gap-2 rounded-lg border border-beige-medium bg-beige-light/50 p-3">
+        <div className="relative min-w-[240px] flex-1">
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-graphite-medium" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Buscar por título, operadora ou subtema..."
+            className={`${FIELD_CLASS} w-full pl-8`}
+            style={FIELD_STYLE}
+          />
+        </div>
+        <select
+          value={operadoraSel}
+          onChange={(e) => setOperadoraSel(e.target.value)}
+          className={`${FIELD_CLASS} max-w-[220px]`}
+          style={FIELD_STYLE}
+        >
+          <option value="__all__">Todas as operadoras</option>
+          {operadorasUnicas.map((o) => (
+            <option key={o} value={o}>{o}</option>
+          ))}
+        </select>
+        <select
+          value={liderSel}
+          onChange={(e) => setLiderSel(e.target.value)}
+          className={FIELD_CLASS}
+          style={FIELD_STYLE}
+        >
+          <option value="__all__">Todos os líderes</option>
+          <option value="Leonardo Andrade">Leonardo Andrade</option>
+          <option value="Alex Charles">Alex Charles</option>
+        </select>
+        <select
+          value={estrategiaSel}
+          onChange={(e) => setEstrategiaSel(e.target.value as "all" | "1" | "2")}
+          className={FIELD_CLASS}
+          style={FIELD_STYLE}
+        >
+          <option value="all">Todas</option>
+          <option value="1">Estratégia 1 — ICT principal</option>
+          <option value="2">Estratégia 2 — Coexecução</option>
+        </select>
+        <div className="ml-auto flex items-center gap-3">
+          <span className="text-[12px] text-graphite-medium">
+            Exibindo <strong className="text-graphite-dark">{formatNumber(stats.total)}</strong> oportunidades · <strong className="text-graphite-dark">{formatBRL(stats.valor)}</strong>
+          </span>
+          {anyFilterActive && (
+            <button
+              type="button"
+              onClick={clearAll}
+              className="inline-flex h-[34px] items-center gap-1 border border-beige-medium bg-white px-3 text-[12px] font-medium text-graphite-dark hover:bg-beige-light"
+              style={{ borderRadius: 6, borderColor: "#E5D5CC" }}
+            >
+              <X className="h-3.5 w-3.5" /> Limpar filtros
+            </button>
+          )}
+        </div>
+      </div>
+
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tipo de produto:</span>
         <button
