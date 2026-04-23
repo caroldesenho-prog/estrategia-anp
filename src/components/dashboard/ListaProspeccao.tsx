@@ -1,11 +1,15 @@
 import { useMemo, useState } from "react";
 import { ProspeccaoItem } from "@/types/dashboard";
 import { KpiCards } from "./KpiCards";
-import { Briefcase, Wallet, Target, Handshake } from "lucide-react";
+import { Briefcase, Wallet, Target, Handshake, Search, X } from "lucide-react";
 import { formatBRL, formatNumber } from "@/lib/format";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+const FIELD_CLASS =
+  "h-[34px] rounded-md border bg-white px-3 text-[12px] text-graphite-dark focus:outline-none focus:ring-1 focus:ring-primary/40";
+const FIELD_STYLE: React.CSSProperties = { borderColor: "#E5D5CC", borderRadius: 6 };
 
 const VISIBLE_ROWS = 15;
 const ROW_HEIGHT_PX = 44; // approx row height including padding
@@ -55,11 +59,45 @@ const ScrollableTable = ({ children, totalRows }: { children: React.ReactNode; t
 
 export const ListaProspeccao = ({ data }: Props) => {
   const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
+  const [search, setSearch] = useState("");
+  const [operadoraSel, setOperadoraSel] = useState("__all__");
+  const [liderSel, setLiderSel] = useState("__all__");
+  const [estrategiaSel, setEstrategiaSel] = useState<"all" | "1" | "2">("all");
+
+  const operadorasUnicas = useMemo(
+    () => Array.from(new Set(data.map((x) => x.operadora).filter(Boolean))).sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [data],
+  );
+
+  const anyFilterActive =
+    tipoFiltro.length > 0 ||
+    search.trim() !== "" ||
+    operadoraSel !== "__all__" ||
+    liderSel !== "__all__" ||
+    estrategiaSel !== "all";
+
+  const clearAll = () => {
+    setTipoFiltro([]);
+    setSearch("");
+    setOperadoraSel("__all__");
+    setLiderSel("__all__");
+    setEstrategiaSel("all");
+  };
 
   const filtered = useMemo(() => {
-    if (tipoFiltro.length === 0) return data;
-    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
-  }, [data, tipoFiltro]);
+    const q = search.trim().toLowerCase();
+    return data.filter((x) => {
+      if (tipoFiltro.length > 0 && !tipoFiltro.includes(x.tipo_produto)) return false;
+      if (operadoraSel !== "__all__" && x.operadora !== operadoraSel) return false;
+      if (liderSel !== "__all__" && x.lider !== liderSel) return false;
+      if (estrategiaSel !== "all" && String(x.estrategia) !== estrategiaSel) return false;
+      if (q) {
+        const hay = `${x.titulo || ""}\n${x.operadora || ""}\n${x.subtema_anp || ""}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [data, tipoFiltro, search, operadoraSel, liderSel, estrategiaSel]);
 
   const toggleTipo = (t: string) => {
     setTipoFiltro((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
