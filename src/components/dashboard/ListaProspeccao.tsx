@@ -458,6 +458,10 @@ export const ListaProspeccao = ({ data }: Props) => {
         operadora diretamente. <strong className="text-graphite-dark">Estratégia 2</strong> → agente contata primeiro a
         empresa parceira — ela já tem o relacionamento com a operadora e o instituto entra como ICT na coexecução.
       </p>
+
+      <p className="text-[12px] leading-relaxed" style={{ color: "#5E6267" }}>
+        <strong>Ordenação por prioridade:</strong> 40% recência (projetos mais recentes primeiro) · 30% acessibilidade da operadora (operadoras médias têm menos concorrência que Petrobras) · 30% valor do projeto
+      </p>
     </div>
   );
 };
