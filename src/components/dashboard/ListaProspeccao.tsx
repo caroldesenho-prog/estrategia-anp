@@ -1,11 +1,15 @@
 import { useMemo, useState } from "react";
 import { ProspeccaoItem } from "@/types/dashboard";
 import { KpiCards } from "./KpiCards";
-import { Briefcase, Wallet, Target, Handshake } from "lucide-react";
+import { Briefcase, Wallet, Target, Handshake, Search, X } from "lucide-react";
 import { formatBRL, formatNumber } from "@/lib/format";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+const FIELD_CLASS =
+  "h-[34px] rounded-md border bg-white px-3 text-[12px] text-graphite-dark focus:outline-none focus:ring-1 focus:ring-primary/40";
+const FIELD_STYLE: React.CSSProperties = { borderColor: "#E5D5CC", borderRadius: 6 };
 
 const VISIBLE_ROWS = 15;
 const ROW_HEIGHT_PX = 44; // approx row height including padding
@@ -55,11 +59,45 @@ const ScrollableTable = ({ children, totalRows }: { children: React.ReactNode; t
 
 export const ListaProspeccao = ({ data }: Props) => {
   const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
+  const [search, setSearch] = useState("");
+  const [operadoraSel, setOperadoraSel] = useState("__all__");
+  const [liderSel, setLiderSel] = useState("__all__");
+  const [estrategiaSel, setEstrategiaSel] = useState<"all" | "1" | "2">("all");
+
+  const operadorasUnicas = useMemo(
+    () => Array.from(new Set(data.map((x) => x.operadora).filter(Boolean))).sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [data],
+  );
+
+  const anyFilterActive =
+    tipoFiltro.length > 0 ||
+    search.trim() !== "" ||
+    operadoraSel !== "__all__" ||
+    liderSel !== "__all__" ||
+    estrategiaSel !== "all";
+
+  const clearAll = () => {
+    setTipoFiltro([]);
+    setSearch("");
+    setOperadoraSel("__all__");
+    setLiderSel("__all__");
+    setEstrategiaSel("all");
+  };
 
   const filtered = useMemo(() => {
-    if (tipoFiltro.length === 0) return data;
-    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
-  }, [data, tipoFiltro]);
+    const q = search.trim().toLowerCase();
+    return data.filter((x) => {
+      if (tipoFiltro.length > 0 && !tipoFiltro.includes(x.tipo_produto)) return false;
+      if (operadoraSel !== "__all__" && x.operadora !== operadoraSel) return false;
+      if (liderSel !== "__all__" && x.lider !== liderSel) return false;
+      if (estrategiaSel !== "all" && String(x.estrategia) !== estrategiaSel) return false;
+      if (q) {
+        const hay = `${x.titulo || ""}\n${x.operadora || ""}\n${x.subtema_anp || ""}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [data, tipoFiltro, search, operadoraSel, liderSel, estrategiaSel]);
 
   const toggleTipo = (t: string) => {
     setTipoFiltro((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
@@ -110,6 +148,67 @@ export const ListaProspeccao = ({ data }: Props) => {
         Oportunidades concretas mapeadas para a vertical, segmentadas por estratégia de aproximação. Cada item indica
         operadora-alvo, líder responsável e tipo de produto a ofertar.
       </p>
+
+      {/* Filter bar */}
+      <div className="flex flex-wrap items-center gap-2 rounded-lg border border-beige-medium bg-beige-light/50 p-3">
+        <div className="relative min-w-[240px] flex-1">
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-graphite-medium" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Buscar por título, operadora ou subtema..."
+            className={`${FIELD_CLASS} w-full pl-8`}
+            style={FIELD_STYLE}
+          />
+        </div>
+        <select
+          value={operadoraSel}
+          onChange={(e) => setOperadoraSel(e.target.value)}
+          className={`${FIELD_CLASS} max-w-[220px]`}
+          style={FIELD_STYLE}
+        >
+          <option value="__all__">Todas as operadoras</option>
+          {operadorasUnicas.map((o) => (
+            <option key={o} value={o}>{o}</option>
+          ))}
+        </select>
+        <select
+          value={liderSel}
+          onChange={(e) => setLiderSel(e.target.value)}
+          className={FIELD_CLASS}
+          style={FIELD_STYLE}
+        >
+          <option value="__all__">Todos os líderes</option>
+          <option value="Leonardo Andrade">Leonardo Andrade</option>
+          <option value="Alex Charles">Alex Charles</option>
+        </select>
+        <select
+          value={estrategiaSel}
+          onChange={(e) => setEstrategiaSel(e.target.value as "all" | "1" | "2")}
+          className={FIELD_CLASS}
+          style={FIELD_STYLE}
+        >
+          <option value="all">Todas</option>
+          <option value="1">Estratégia 1 — ICT principal</option>
+          <option value="2">Estratégia 2 — Coexecução</option>
+        </select>
+        <div className="ml-auto flex items-center gap-3">
+          <span className="text-[12px] text-graphite-medium">
+            Exibindo <strong className="text-graphite-dark">{formatNumber(stats.total)}</strong> oportunidades · <strong className="text-graphite-dark">{formatBRL(stats.valor)}</strong>
+          </span>
+          {anyFilterActive && (
+            <button
+              type="button"
+              onClick={clearAll}
+              className="inline-flex h-[34px] items-center gap-1 border border-beige-medium bg-white px-3 text-[12px] font-medium text-graphite-dark hover:bg-beige-light"
+              style={{ borderRadius: 6, borderColor: "#E5D5CC" }}
+            >
+              <X className="h-3.5 w-3.5" /> Limpar filtros
+            </button>
+          )}
+        </div>
+      </div>
 
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tipo de produto:</span>
