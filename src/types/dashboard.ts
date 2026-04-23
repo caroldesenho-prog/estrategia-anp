@@ -100,6 +100,7 @@ export interface ProspeccaoItem {
   estrategia_label: string;
   empresa_parceira: string;
   qualificacao: string;
+  score_total?: number;
 }
 
 export interface VerticalData {
