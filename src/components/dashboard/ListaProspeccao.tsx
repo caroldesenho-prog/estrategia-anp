@@ -7,8 +7,26 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const PAGE_SIZE = 20;
+
+const truncate = (s: string, n = 60) => (s && s.length > n ? s.slice(0, n).trimEnd() + "…" : s || "");
+
+const TituloCell = ({ titulo }: { titulo: string }) => (
+  <TooltipProvider delayDuration={150}>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span className="block max-w-[280px] cursor-help truncate text-[11px] text-graphite-dark">
+          {truncate(titulo, 60)}
+        </span>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="max-w-md text-xs">
+        {titulo}
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+);
 
 const normalizeTipo = (tipo: string): string => {
   if (!tipo) return tipo;
