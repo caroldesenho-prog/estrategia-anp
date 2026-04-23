@@ -315,6 +315,7 @@ export const ListaProspeccao = ({ data }: Props) => {
             <TableHeader>
               <TableRow>
                 <TableHead>Operadora</TableHead>
+                <TableHead>Título do projeto</TableHead>
                 <TableHead>Área da vertical</TableHead>
                 <TableHead>Líder da área</TableHead>
                 <TableHead>Competência da vertical</TableHead>
@@ -327,6 +328,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               {e1Page.map((it, i) => (
                 <TableRow key={`e1-${page1}-${i}`}>
                   <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
+                  <TableCell><TituloCell titulo={it.titulo} /></TableCell>
                   <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
                   <TableCell className="text-primary font-medium">{it.lider}</TableCell>
                   <TableCell className="max-w-[280px] text-xs text-graphite-medium">
