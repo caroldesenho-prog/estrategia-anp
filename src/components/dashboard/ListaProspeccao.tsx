@@ -5,11 +5,10 @@ import { Briefcase, Wallet, Target, Handshake } from "lucide-react";
 import { formatBRL, formatNumber } from "@/lib/format";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-const PAGE_SIZE = 20;
+const VISIBLE_ROWS = 15;
+const ROW_HEIGHT_PX = 44; // approx row height including padding
 
 const truncate = (s: string, n = 60) => (s && s.length > n ? s.slice(0, n).trimEnd() + "…" : s || "");
 
@@ -28,73 +27,41 @@ const TituloCell = ({ titulo }: { titulo: string }) => (
   </TooltipProvider>
 );
 
-const normalizeTipo = (tipo: string): string => {
-  if (!tipo) return tipo;
-  const t = tipo.toUpperCase();
-  if (t.includes("METROLOGIA")) return "Metrologia";
-  const hasPdi = t.includes("PDI");
-  const hasServ = t.includes("SERVI");
-  if (hasPdi && hasServ) return "PDI e Serviços";
-  if (hasPdi) return "PDI";
-  if (hasServ) return "Serviços";
-  return tipo;
-};
-
-const TIPO_ORDER = ["PDI", "Serviços", "PDI e Serviços", "Metrologia"];
+// Fixed list of 5 buttons. tipo_produto is already normalized in the JSON.
+const TIPO_BUTTONS = ["PDI", "PDI e Serviços", "Serviços", "Metrologia"] as const;
 
 const tipoBadge = (tipo: string) => {
-  const t = normalizeTipo(tipo).toUpperCase();
-  if (t.includes("METROLOGIA"))
-    return "border-transparent bg-bordeaux-soft text-bordeaux";
-  if (t.includes("PDI"))
-    return "border-transparent bg-primary-soft text-primary";
+  const t = (tipo || "").toUpperCase();
+  if (t.includes("METROLOGIA")) return "border-transparent bg-bordeaux-soft text-bordeaux";
+  if (t.includes("PDI")) return "border-transparent bg-primary-soft text-primary";
   return "border-transparent bg-beige-light text-graphite-dark";
-};
-
-const Pager = ({ page, total, onChange }: { page: number; total: number; onChange: (p: number) => void }) => {
-  if (total <= 1) return null;
-  return (
-    <div className="mt-3 flex items-center justify-end gap-2 text-sm">
-      <span className="text-muted-foreground">
-        Página {page + 1} de {total}
-      </span>
-      <Button variant="outline" size="sm" onClick={() => onChange(Math.max(0, page - 1))} disabled={page === 0}>
-        <ChevronLeft className="h-4 w-4" />
-      </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => onChange(Math.min(total - 1, page + 1))}
-        disabled={page >= total - 1}
-      >
-        <ChevronRight className="h-4 w-4" />
-      </Button>
-    </div>
-  );
 };
 
 interface Props {
   data: ProspeccaoItem[];
 }
 
-export const ListaProspeccao = ({ data }: Props) => {
-  const [page1, setPage1] = useState(0);
-  const [page2, setPage2] = useState(0);
-  const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
+const ScrollableTable = ({ children, totalRows }: { children: React.ReactNode; totalRows: number }) => {
+  const needsScroll = totalRows > VISIBLE_ROWS;
+  if (!needsScroll) {
+    return <div className="overflow-x-auto p-2">{children}</div>;
+  }
+  return (
+    <div className="overflow-x-auto p-2">
+      <div style={{ maxHeight: 400, overflowY: "scroll" }}>{children}</div>
+    </div>
+  );
+};
 
-  const tiposDisponiveis = useMemo(() => {
-    const set = new Set(data.map((x) => normalizeTipo(x.tipo_produto)).filter(Boolean));
-    return TIPO_ORDER.filter((t) => set.has(t));
-  }, [data]);
+export const ListaProspeccao = ({ data }: Props) => {
+  const [tipoFiltro, setTipoFiltro] = useState<string[]>([]);
 
   const filtered = useMemo(() => {
     if (tipoFiltro.length === 0) return data;
-    return data.filter((x) => tipoFiltro.includes(normalizeTipo(x.tipo_produto)));
+    return data.filter((x) => tipoFiltro.includes(x.tipo_produto));
   }, [data, tipoFiltro]);
 
   const toggleTipo = (t: string) => {
-    setPage1(0);
-    setPage2(0);
     setTipoFiltro((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
   };
 
@@ -109,6 +76,8 @@ export const ListaProspeccao = ({ data }: Props) => {
     const sumVal = (arr: ProspeccaoItem[]) => arr.reduce((s, x) => s + (x.valor || 0), 0);
     const areas = (arr: ProspeccaoItem[]) => Array.from(new Set(arr.map((x) => x.area_da_vertical))).filter(Boolean);
     const countE = (arr: ProspeccaoItem[], e: 1 | 2) => arr.filter((x) => x.estrategia === e).length;
+    const sortByScore = (arr: ProspeccaoItem[]) =>
+      [...arr].sort((a, b) => (b.score_total ?? 0) - (a.score_total ?? 0));
     return {
       total,
       valor,
@@ -130,15 +99,10 @@ export const ListaProspeccao = ({ data }: Props) => {
         e1: countE(alex, 1),
         e2: countE(alex, 2),
       },
-      e1List: [...e1].sort((a, b) => b.valor - a.valor),
-      e2List: [...e2].sort((a, b) => b.valor - a.valor),
+      e1List: sortByScore(e1),
+      e2List: sortByScore(e2),
     };
   }, [filtered]);
-
-  const e1Pages = Math.max(1, Math.ceil(stats.e1List.length / PAGE_SIZE));
-  const e2Pages = Math.max(1, Math.ceil(stats.e2List.length / PAGE_SIZE));
-  const e1Page = stats.e1List.slice(page1 * PAGE_SIZE, (page1 + 1) * PAGE_SIZE);
-  const e2Page = stats.e2List.slice(page2 * PAGE_SIZE, (page2 + 1) * PAGE_SIZE);
 
   return (
     <div className="space-y-6">
@@ -151,11 +115,7 @@ export const ListaProspeccao = ({ data }: Props) => {
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tipo de produto:</span>
         <button
           type="button"
-          onClick={() => {
-            setTipoFiltro([]);
-            setPage1(0);
-            setPage2(0);
-          }}
+          onClick={() => setTipoFiltro([])}
           className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
             tipoFiltro.length === 0
               ? "border-primary bg-primary text-primary-foreground"
@@ -164,7 +124,7 @@ export const ListaProspeccao = ({ data }: Props) => {
         >
           Todos
         </button>
-        {tiposDisponiveis.map((t) => {
+        {TIPO_BUTTONS.map((t) => {
           const active = tipoFiltro.includes(t);
           return (
             <button
@@ -310,7 +270,7 @@ export const ListaProspeccao = ({ data }: Props) => {
           <Badge className="bg-primary text-white hover:bg-primary">Estratégia 1 — Virar ICT principal</Badge>
           <span className="text-sm text-graphite-medium">{stats.e1List.length} oportunidades</span>
         </div>
-        <div className="overflow-x-auto p-2">
+        <ScrollableTable totalRows={stats.e1List.length}>
           <Table>
             <TableHeader>
               <TableRow>
@@ -325,8 +285,8 @@ export const ListaProspeccao = ({ data }: Props) => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {e1Page.map((it, i) => (
-                <TableRow key={`e1-${page1}-${i}`}>
+              {stats.e1List.map((it, i) => (
+                <TableRow key={`e1-${i}`}>
                   <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
                   <TableCell><TituloCell titulo={it.titulo} /></TableCell>
                   <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
@@ -336,7 +296,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {normalizeTipo(it.tipo_produto)}
+                      {it.tipo_produto}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-xs text-graphite-medium">{it.qualificacao}</TableCell>
@@ -345,10 +305,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               ))}
             </TableBody>
           </Table>
-        </div>
-        <div className="px-5 pb-3">
-          <Pager page={page1} total={e1Pages} onChange={setPage1} />
-        </div>
+        </ScrollableTable>
       </div>
 
       {/* Estratégia 2 */}
@@ -359,7 +316,7 @@ export const ListaProspeccao = ({ data }: Props) => {
           </Badge>
           <span className="text-sm text-graphite-medium">{stats.e2List.length} oportunidades</span>
         </div>
-        <div className="overflow-x-auto p-2">
+        <ScrollableTable totalRows={stats.e2List.length}>
           <Table>
             <TableHeader>
               <TableRow>
@@ -374,8 +331,8 @@ export const ListaProspeccao = ({ data }: Props) => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {e2Page.map((it, i) => (
-                <TableRow key={`e2-${page2}-${i}`}>
+              {stats.e2List.map((it, i) => (
+                <TableRow key={`e2-${i}`}>
                   <TableCell className="font-medium text-graphite-dark">{it.operadora}</TableCell>
                   <TableCell><TituloCell titulo={it.titulo} /></TableCell>
                   <TableCell className="text-graphite-dark">{it.area_da_vertical}</TableCell>
@@ -386,7 +343,7 @@ export const ListaProspeccao = ({ data }: Props) => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className={tipoBadge(it.tipo_produto)}>
-                      {normalizeTipo(it.tipo_produto)}
+                      {it.tipo_produto}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right font-semibold tabular-nums text-graphite-dark">{formatBRL(it.valor)}</TableCell>
@@ -394,10 +351,7 @@ export const ListaProspeccao = ({ data }: Props) => {
               ))}
             </TableBody>
           </Table>
-        </div>
-        <div className="px-5 pb-3">
-          <Pager page={page2} total={e2Pages} onChange={setPage2} />
-        </div>
+        </ScrollableTable>
       </div>
 
       <p className="rounded-lg border border-beige-medium bg-beige-light p-4 text-xs leading-relaxed text-graphite-medium">
